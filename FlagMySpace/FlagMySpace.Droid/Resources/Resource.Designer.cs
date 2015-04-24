@@ -26,6 +26,8 @@ namespace FlagMySpace.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::FlagMySpace.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Forms.Platform.Resource.String.Hello = global::FlagMySpace.Droid.Resource.String.Hello;
 			global::XLabs.Platform.Resource.String.ApplicationName = global::FlagMySpace.Droid.Resource.String.ApplicationName;
 			global::XLabs.Platform.Resource.String.Hello = global::FlagMySpace.Droid.Resource.String.Hello;
 		}
