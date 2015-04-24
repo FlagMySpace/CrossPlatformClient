@@ -23,9 +23,8 @@ namespace FlagMySpace.Bootstrap
 
         protected override void ConfigureApplication(IKernel kernel)
         {
-            // set main page
             var viewFactory = kernel.Get<IViewFactory>();
-            var mainPage = viewFactory.Resolve<LoginPageViewModel>();
+            var mainPage = viewFactory.Get<LoginPageViewModel>();
             var navigationPage = new NavigationPage(mainPage);
 
             _application.MainPage = navigationPage;
@@ -39,7 +38,8 @@ namespace FlagMySpace.Bootstrap
 
         protected override void RegisterViews(IViewFactory viewFactory)
         {
-            viewFactory.Register<LoginPageViewModel, LoginPage>();
+            viewFactory.Set<LoginPageViewModel, LoginPage>();
+            viewFactory.Set<RegisterPageViewModel, RegisterPage>();
         }
     }
 }

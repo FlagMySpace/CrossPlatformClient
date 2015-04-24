@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ninject;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
@@ -19,20 +16,20 @@ namespace FlagMySpace.ViewFactory
             _kernel = kernel;
         }
 
-        public void Register<TViewModel, TView>()
+        public void Set<TViewModel, TView>()
             where TViewModel : class, IViewModel
             where TView : Page
         {
             _map[typeof(TViewModel)] = typeof(TView);
         }
 
-        public Page Resolve<TViewModel>(Action<TViewModel> setStateAction = null) where TViewModel : class, IViewModel
+        public Page Get<TViewModel>() where TViewModel : class, IViewModel
         {
             TViewModel viewModel;
-            return Resolve<TViewModel>(out viewModel, setStateAction);
+            return Get<TViewModel>(out viewModel);
         }
 
-        public Page Resolve<TViewModel>(out TViewModel viewModel, Action<TViewModel> setStateAction = null)
+        public Page Get<TViewModel>(out TViewModel viewModel)
             where TViewModel : class, IViewModel
         {
             viewModel = _kernel.Get<TViewModel>();
@@ -44,7 +41,7 @@ namespace FlagMySpace.ViewFactory
             return view;
         }
 
-        public Page Resolve<TViewModel>(TViewModel viewModel)
+        public Page Get<TViewModel>(TViewModel viewModel)
             where TViewModel : class, IViewModel
         {
             var viewType = _map[typeof(TViewModel)];

@@ -7,11 +7,7 @@ using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.ViewModels
 {
-    public class LoginPageViewModel : ViewModel
+    public class RegisterPageViewModel : ViewModel
     {
-        public LoginPageViewModel()
-        {
-
-        }
     }
 }
