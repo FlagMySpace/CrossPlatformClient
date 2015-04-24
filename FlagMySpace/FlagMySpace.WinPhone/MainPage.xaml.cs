@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
+﻿using Microsoft.Phone.Controls;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.WinPhone;
+using System;
 
 namespace FlagMySpace.WinPhone
 {
-    public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage
+    public partial class MainPage : FormsApplicationPage
     {
         public MainPage()
         {
             InitializeComponent();
             SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
-            global::Xamarin.Forms.Forms.Init();
+            Forms.Init();
             LoadApplication(new FlagMySpace.App());
         }
     }
