@@ -35,6 +35,7 @@ namespace FlagMySpace.Bootstrap
         {
             var listModule = Modules.ToList();
             listModule.Add(new ViewFactoryModule());
+            listModule.Add(new CommonModule());
 
             var kernel = new StandardKernel(listModule.ToArray());
             return kernel;

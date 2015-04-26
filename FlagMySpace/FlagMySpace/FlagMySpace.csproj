@@ -41,6 +41,8 @@
     </Compile>
     <Compile Include="Bootstrap\NinjectBoostrapper.cs" />
     <Compile Include="Bootstrap\Bootstrapper.cs" />
+    <Compile Include="Common\ErrorHandler.cs" />
+    <Compile Include="NinjectModules\CommonModule.cs" />
     <Compile Include="NinjectModules\ViewFactoryModule.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -62,6 +64,9 @@
     <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Portable.Ninject.3.3.1\lib\Xamarin.iOS\Ninject.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Parse.iOS">
+      <HintPath>..\..\packages\parse.1.4.1\lib\Xamarin.iOS10\Parse.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\Profile\Profile78\System.Runtime.dll</HintPath>
