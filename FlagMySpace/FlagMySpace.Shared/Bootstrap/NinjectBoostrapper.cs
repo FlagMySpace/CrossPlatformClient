@@ -1,43 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FlagMySpace.NinjectModules;
-using FlagMySpace.Pages;
-using FlagMySpace.ViewFactory;
-using FlagMySpace.ViewModels;
+﻿using System.Linq;
+using FlagMySpace.Shared.Localization;
+using FlagMySpace.Shared.NinjectModules;
+using FlagMySpace.Shared.Pages;
+using FlagMySpace.Shared.ViewFactory;
+using FlagMySpace.Shared.ViewModels;
 using Ninject;
 using Ninject.Modules;
 using Xamarin.Forms;
 
-namespace FlagMySpace.Bootstrap
+namespace FlagMySpace.Shared.Bootstrap
 {
     public class NinjectBoostrapper : Bootstrapper
     {
-        public INinjectModule[] Modules { get; set; }
-
         public NinjectBoostrapper(params INinjectModule[] modules)
         {
             Modules = modules;
         }
 
+        public INinjectModule[] Modules { get; set; }
+
         protected override void ConfigureApplication(IKernel kernel)
         {
+            if (Device.OS != TargetPlatform.WinPhone)
+            {
+                AppResources.Culture = kernel.Get<ILocalize>().GetCurrentCultureInfo();
+            }
             var viewFactory = kernel.Get<IViewFactory>();
             var mainPage = viewFactory.Get<LoginPageViewModel>();
             var navigationPage = new NavigationPage(mainPage);
 
             Application.MainPage = navigationPage;
         }
-    
+
         protected override IKernel ConfigureKernel()
         {
-            var listModule = Modules.ToList();
-            listModule.Add(new ViewFactoryModule());
-            listModule.Add(new CommonModule());
-
-            var kernel = new StandardKernel(listModule.ToArray());
+            var kernel = new StandardKernel(
+                new ViewFactoryModule(),
+                new CommonModule(),
+                new MockProviderModule(),
+                new LocalizationModule());
             return kernel;
         }
 

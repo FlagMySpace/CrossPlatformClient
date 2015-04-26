@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FlagMySpace.ViewFactory;
+﻿
+using FlagMySpace.Shared.ViewFactory;
 using Ninject.Modules;
 
-namespace FlagMySpace.NinjectModules
+namespace FlagMySpace.Shared.NinjectModules
 {
     public class ViewFactoryModule : NinjectModule
     {

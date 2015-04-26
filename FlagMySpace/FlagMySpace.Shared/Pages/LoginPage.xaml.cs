@@ -1,9 +1,7 @@
-﻿using System;
-using FlagMySpace.ViewFactory;
-using FlagMySpace.ViewModels;
+﻿using FlagMySpace.Shared.ViewFactory;
 using Xamarin.Forms;
 
-namespace FlagMySpace.Pages
+namespace FlagMySpace.Shared.Pages
 {
     public partial class LoginPage : ContentPage
     {
@@ -13,11 +11,6 @@ namespace FlagMySpace.Pages
         {
             _viewFactory = viewFactory;
             InitializeComponent();
-        }
-
-        private async void ButtonRegister_OnClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(_viewFactory.Get<RegisterPageViewModel>());
         }
     }
 }

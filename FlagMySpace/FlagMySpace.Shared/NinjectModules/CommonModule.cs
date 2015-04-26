@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FlagMySpace.Common;
+﻿using FlagMySpace.Shared.Common;
 using Ninject.Modules;
 
-namespace FlagMySpace.NinjectModules
+namespace FlagMySpace.Shared.NinjectModules
 {
     public class CommonModule : NinjectModule
     {

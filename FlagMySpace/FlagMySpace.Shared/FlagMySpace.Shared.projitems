@@ -15,7 +15,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Bootstrap\Bootstrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Bootstrap\NinjectBoostrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\ErrorHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localization\ILocalize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localization\LocalizeAndroid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Localization\LoginPageLocalizationProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MockProvider\MockLoginProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NinjectModules\CommonModule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NinjectModules\LocalizationModule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NinjectModules\MockProviderModule.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NinjectModules\ViewFactoryModule.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>

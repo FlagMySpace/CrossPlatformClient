@@ -4,9 +4,10 @@ using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using FlagMySpace.Shared;
+using FlagMySpace.Shared.Resources;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using FlagMySpace.WinPhone.Resources;
 
 namespace FlagMySpace.WinPhone
 {

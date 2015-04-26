@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿using Foundation;
 using UIKit;
-using FlagMySpace.Bootstrap;
+using FlagMySpace.Shared;
+using FlagMySpace.Shared.Bootstrap;
 
 namespace FlagMySpace.iOS
 {

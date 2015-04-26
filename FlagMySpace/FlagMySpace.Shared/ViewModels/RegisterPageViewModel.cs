@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XLabs.Forms.Mvvm;
+﻿using XLabs.Forms.Mvvm;
 
-namespace FlagMySpace.ViewModels
+namespace FlagMySpace.Shared.ViewModels
 {
     public class RegisterPageViewModel : ViewModel
     {

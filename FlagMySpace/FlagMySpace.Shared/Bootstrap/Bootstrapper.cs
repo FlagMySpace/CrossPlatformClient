@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FlagMySpace.ViewFactory;
+﻿using FlagMySpace.Shared.ViewFactory;
 using Ninject;
-using Ninject.Modules;
 using Xamarin.Forms;
 
-namespace FlagMySpace.Bootstrap
+namespace FlagMySpace.Shared.Bootstrap
 {
     public abstract class Bootstrapper
     {
+        protected Application Application { get; set; }
+
         public void Run(Application application)
         {
             Application = application;
@@ -21,12 +17,8 @@ namespace FlagMySpace.Bootstrap
             ConfigureApplication(kernel);
         }
 
-        protected Application Application { get; set; }
-
         protected abstract IKernel ConfigureKernel();
-
         protected abstract void RegisterViews(IViewFactory viewFactory);
-
         protected abstract void ConfigureApplication(IKernel kernel);
     }
 }

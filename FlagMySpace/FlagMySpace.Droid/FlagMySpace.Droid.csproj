@@ -120,6 +120,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LocalizationResources\AppResources.id-ID.Designer.cs">
+      <DependentUpon>AppResources.id-ID.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LocalizationResources\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,7 +148,18 @@
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <Import Project="..\..\FlagMySpace.Shared\FlagMySpace.Shared.projitems" Label="Shared" Condition="Exists('..\..\FlagMySpace.Shared\FlagMySpace.Shared.projitems')" />
+  <ItemGroup>
+    <EmbeddedResource Include="LocalizationResources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>FlagMySpace.Shared</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResources\AppResources.id-ID.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.id-ID.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>FlagMySpace.Shared</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="..\FlagMySpace.Shared\FlagMySpace.Shared.projitems" Label="Shared" Condition="Exists('..\FlagMySpace.Shared\FlagMySpace.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

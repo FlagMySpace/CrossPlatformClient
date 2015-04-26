@@ -3,24 +3,29 @@ using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace FlagMySpace.Common
+namespace FlagMySpace.Shared.Common
 {
+    public interface IErrorNotifiable
+    {
+        void ErrorNotify(Exception exception);
+    }
+
     public interface IError
     {
-        void CaptureError(Exception ex);
+        void CaptureError(Exception ex, IErrorNotifiable errorNotifiable);
     }
 
     public class ErrorHandler : IError
     {
         private ExceptionDispatchInfo _capturedException;
 
-        public void CaptureError(Exception ex)
+        public void CaptureError(Exception ex, IErrorNotifiable errorNotifiable)
         {
             _capturedException = ExceptionDispatchInfo.Capture(ex);
 
             if (_capturedException != null)
             {
-                MessagingCenter.Send(this, "error", _capturedException);
+                errorNotifiable.ErrorNotify(_capturedException.SourceException);
                 _capturedException = null;
             }
         }

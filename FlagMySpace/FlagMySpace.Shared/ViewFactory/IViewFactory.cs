@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
-namespace FlagMySpace.ViewFactory
+namespace FlagMySpace.Shared.ViewFactory
 {
     public interface IViewFactory
     {

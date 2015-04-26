@@ -1,8 +1,7 @@
 ﻿using Microsoft.Phone.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WinPhone;
-using System;
-using FlagMySpace.Bootstrap;
+using FlagMySpace.Shared.Bootstrap;
 
 namespace FlagMySpace.WinPhone
 {
