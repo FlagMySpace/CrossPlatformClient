@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlagMySpace.Pages.LoginPage">
+             x:Class="FlagMySpace.Pages.LoginPage"
+             Title="{Binding Title}">
   <StackLayout>
-    <Entry x:Name="EntryUsername" Placeholder="username"></Entry>
-    <Entry x:Name="EntryPassword" Placeholder="password" IsPassword="True"></Entry>
+    <Entry x:Name="EntryUsername" Text="{Binding Username}" Placeholder="username"></Entry>
+    <Entry x:Name="EntryPassword" Text="{Binding Password}" Placeholder="password" IsPassword="True"></Entry>
     <Button Text="login"></Button>
-    <Button x:Name="ButtonRegister" Text="register" Clicked="ButtonRegister_OnClicked"></Button>
   </StackLayout>
 </ContentPage>

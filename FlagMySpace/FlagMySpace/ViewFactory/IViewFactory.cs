@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.ViewFactory
@@ -18,5 +17,7 @@ namespace FlagMySpace.ViewFactory
 
         Page Get<TViewModel>(TViewModel viewModel)
             where TViewModel : class, IViewModel;
+
+        Page GetFromViewModel(IViewModel viewModel);
     }
 }

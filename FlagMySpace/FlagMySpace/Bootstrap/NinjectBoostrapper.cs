@@ -8,17 +8,18 @@ using FlagMySpace.Pages;
 using FlagMySpace.ViewFactory;
 using FlagMySpace.ViewModels;
 using Ninject;
+using Ninject.Modules;
 using Xamarin.Forms;
 
 namespace FlagMySpace.Bootstrap
 {
-    public class AppBoostrapper : NinjectBootstrapper
+    public class NinjectBoostrapper : Bootstrapper
     {
-        private readonly App _application;
+        public INinjectModule[] Modules { get; set; }
 
-        public AppBoostrapper(App application)
+        public NinjectBoostrapper(params INinjectModule[] modules)
         {
-            _application = application;
+            Modules = modules;
         }
 
         protected override void ConfigureApplication(IKernel kernel)
@@ -27,12 +28,15 @@ namespace FlagMySpace.Bootstrap
             var mainPage = viewFactory.Get<LoginPageViewModel>();
             var navigationPage = new NavigationPage(mainPage);
 
-            _application.MainPage = navigationPage;
+            Application.MainPage = navigationPage;
         }
     
         protected override IKernel ConfigureKernel()
         {
-            var kernel = new StandardKernel(new ViewFactoryModule());
+            var listModule = Modules.ToList();
+            listModule.Add(new ViewFactoryModule());
+
+            var kernel = new StandardKernel(listModule.ToArray());
             return kernel;
         }
 

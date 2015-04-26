@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using FlagMySpace.Bootstrap;
 
 namespace FlagMySpace.iOS
 {
@@ -23,7 +24,10 @@ namespace FlagMySpace.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            var bootstrapper = new NinjectBoostrapper();
+
+            LoadApplication(new App(bootstrapper));
 
             return base.FinishedLaunching(app, options);
         }

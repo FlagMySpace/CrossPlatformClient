@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WinPhone;
 using System;
+using FlagMySpace.Bootstrap;
 
 namespace FlagMySpace.WinPhone
 {
@@ -13,7 +14,9 @@ namespace FlagMySpace.WinPhone
             SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
             Forms.Init();
-            LoadApplication(new FlagMySpace.App());
+
+            var bootstrapper = new NinjectBoostrapper();
+            LoadApplication(new FlagMySpace.App(bootstrapper));
         }
     }
 }

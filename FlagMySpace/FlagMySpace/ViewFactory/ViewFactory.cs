@@ -9,6 +9,7 @@ namespace FlagMySpace.ViewFactory
     public class ViewFactory : IViewFactory
     {
         private readonly IDictionary<Type, Type> _map = new Dictionary<Type, Type>();
+        private readonly IDictionary<IViewModel, Page> _constantMap = new Dictionary<IViewModel, Page>();
         private readonly IKernel _kernel;
 
         public ViewFactory(IKernel kernel)
@@ -37,6 +38,8 @@ namespace FlagMySpace.ViewFactory
             var viewType = _map[typeof(TViewModel)];
             var view = (Page)_kernel.Get(viewType);
 
+            _constantMap[viewModel] = view;
+            viewModel.Navigation = new ViewModelNavigation(view.Navigation);
             view.BindingContext = viewModel;
             return view;
         }
@@ -46,8 +49,16 @@ namespace FlagMySpace.ViewFactory
         {
             var viewType = _map[typeof(TViewModel)];
             var view = (Page)_kernel.Get(viewType);
+
+            _constantMap[viewModel] = view;
+            viewModel.Navigation = new ViewModelNavigation(view.Navigation);
             view.BindingContext = viewModel;
             return view;
+        }
+
+        public Page GetFromViewModel(IViewModel viewModel)
+        {
+            return _constantMap[viewModel];
         }
     }
 }

@@ -4,11 +4,10 @@ namespace FlagMySpace
 {
     public partial class App
     {
-        public App()
+        public App(Bootstrapper bootstrapper)
         {
             InitializeComponent();
-            var bootstrapper = new AppBoostrapper(this);
-            bootstrapper.Run();
+            bootstrapper.Run(this);
         }
     }
 }
