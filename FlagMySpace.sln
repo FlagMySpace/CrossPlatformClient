@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagMySpace", "FlagMySpace\FlagMySpace\FlagMySpace.csproj", "{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagMySpace.iOS", "FlagMySpace\FlagMySpace.iOS\FlagMySpace.iOS.csproj", "{7C963662-FEBC-45AB-83F1-40FA6B2ABF8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagMySpace.Droid", "FlagMySpace\FlagMySpace.Droid\FlagMySpace.Droid.csproj", "{A421E59C-F266-4601-ACA1-F047B00D3927}"
@@ -18,7 +16,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C2C6B5
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FlagMySpace.Shared", "FlagMySpace\FlagMySpace.Shared\FlagMySpace.Shared.shproj", "{E79DB3AB-9CAA-4A42-876E-2D2FE6913DED}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FlagMySpace\FlagMySpace.Shared\FlagMySpace.Shared.projitems*{a421e59c-f266-4601-aca1-f047b00d3927}*SharedItemsImports = 4
+		FlagMySpace\FlagMySpace.Shared\FlagMySpace.Shared.projitems*{7c963662-febc-45ab-83f1-40fa6b2abf8d}*SharedItemsImports = 4
+		FlagMySpace\FlagMySpace.Shared\FlagMySpace.Shared.projitems*{9d02c26e-f083-49c4-b7e1-aa19e1fc967a}*SharedItemsImports = 4
+		FlagMySpace\FlagMySpace.Shared\FlagMySpace.Shared.projitems*{e79db3ab-9caa-4a42-876e-2d2fe6913ded}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|ARM = Ad-Hoc|ARM
@@ -46,38 +52,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Ad-Hoc|ARM.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Ad-Hoc|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Ad-Hoc|Mixed Platforms.Build.0 = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Ad-Hoc|x86.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.AppStore|Any CPU.Build.0 = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.AppStore|ARM.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.AppStore|iPhone.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.AppStore|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.AppStore|Mixed Platforms.Build.0 = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.AppStore|x86.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Release|ARM.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{235126ED-E4EF-44BA-8A6F-E86EFE3D132D}.Release|x86.ActiveCfg = Release|Any CPU
 		{7C963662-FEBC-45AB-83F1-40FA6B2ABF8D}.Ad-Hoc|Any CPU.ActiveCfg = Ad-Hoc|iPhone
 		{7C963662-FEBC-45AB-83F1-40FA6B2ABF8D}.Ad-Hoc|ARM.ActiveCfg = Ad-Hoc|iPhone
 		{7C963662-FEBC-45AB-83F1-40FA6B2ABF8D}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone

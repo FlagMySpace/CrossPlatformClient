@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.ExceptionServices;
-using System.Text;
-using System.Threading.Tasks;
 using FlagMySpace.Common;
 using FlagMySpace.ViewFactory;
-using Ninject;
 using Parse;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
@@ -15,24 +10,18 @@ namespace FlagMySpace.ViewModels
 {
     public class LoginPageViewModel : ViewModel
     {
-        private readonly IViewFactory _viewFactory;
-        private readonly IError _error;
+        private Command _loginCommand;
+        private string _password;
         private string _title;
         private string _username;
-        private string _password;
-        private Command _loginCommand;
+        private readonly IError _error;
+        private readonly IViewFactory _viewFactory;
 
         public LoginPageViewModel(IViewFactory viewFactory, IError error)
         {
             _viewFactory = viewFactory;
             _error = error;
             MessagingCenter.Subscribe<IError, ExceptionDispatchInfo>(this, "error", ErrorThrown);
-        }
-
-        private async void ErrorThrown(IError error, ExceptionDispatchInfo exceptionDispatchInfo)
-        {
-            var page = _viewFactory.GetFromViewModel(this);
-            await page.DisplayAlert("Login Failed", exceptionDispatchInfo.SourceException.Message, "OK");
         }
 
         public String Title
@@ -56,6 +45,12 @@ namespace FlagMySpace.ViewModels
         public Command LoginCommand
         {
             get { return _loginCommand ?? (_loginCommand = new Command(Login)); }
+        }
+
+        private async void ErrorThrown(IError error, ExceptionDispatchInfo exceptionDispatchInfo)
+        {
+            var page = _viewFactory.GetFromViewModel(this);
+            await page.DisplayAlert("Login Failed", exceptionDispatchInfo.SourceException.Message, "OK");
         }
 
         private async void Login()
