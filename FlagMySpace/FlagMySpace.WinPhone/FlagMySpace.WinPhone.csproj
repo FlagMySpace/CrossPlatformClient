@@ -167,6 +167,9 @@
       <HintPath>..\..\packages\Parse.1.4.1\lib\wp8\Parse.Phone.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WPControls">
+      <HintPath>..\..\packages\WPControls.1.5.2\lib\wp8\WPControls.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.2.6355\lib\WP80\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
@@ -183,36 +186,34 @@
       <HintPath>..\..\packages\Xamarin.Forms.1.4.2.6355\lib\WP80\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XLabs.Core, Version=2.0.5575.11866, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Core.2.0.5575\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="XLabs.Core">
+      <HintPath>..\..\packages\XLabs.Core.2.0.5593\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Forms, Version=2.0.5575.11889, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Forms.2.0.5575\lib\wp8\XLabs.Forms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="XLabs.Forms">
+      <HintPath>..\..\packages\XLabs.Forms.2.0.5593\lib\wp8\XLabs.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Forms.WP8, Version=2.0.5575.11891, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Forms.2.0.5575\lib\wp8\XLabs.Forms.WP8.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="XLabs.Forms.WP8">
+      <HintPath>..\..\packages\XLabs.Forms.2.0.5593\lib\wp8\XLabs.Forms.WP8.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Ioc, Version=2.0.5575.11879, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.IoC.2.0.5575\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Ioc.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="XLabs.Ioc">
+      <HintPath>..\..\packages\XLabs.IoC.2.0.5593\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Ioc.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Platform, Version=2.0.5575.11885, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Platform.2.0.5575\lib\wp8\XLabs.Platform.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="XLabs.Platform">
+      <HintPath>..\..\packages\XLabs.Platform.2.0.5593\lib\wp8\XLabs.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Platform.WP8, Version=2.0.5575.11885, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Platform.2.0.5575\lib\wp8\XLabs.Platform.WP8.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="XLabs.Platform.WP8">
+      <HintPath>..\..\packages\XLabs.Platform.2.0.5593\lib\wp8\XLabs.Platform.WP8.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Serialization, Version=2.0.5575.11858, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Serialization.2.0.5575\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="XLabs.Serialization">
+      <HintPath>..\..\packages\XLabs.Serialization.2.0.5593\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <Import Project="..\FlagMySpace.Shared\FlagMySpace.Shared.projitems" Label="Shared" Condition="Exists('..\FlagMySpace.Shared\FlagMySpace.Shared.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\FlagMySpace.Portable\FlagMySpace.Portable.csproj">
+      <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
+      <Name>FlagMySpace.Portable</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

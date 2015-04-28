@@ -82,8 +82,7 @@
       <HintPath>..\..\packages\Parse.1.4.1\lib\MonoAndroid\Parse.Android.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\..\packages\Xamarin.Android.Support.v4.22.0.0\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\packages\Xamarin.Android.Support.v4.22.1.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.2.6355\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
@@ -97,39 +96,37 @@
     <Reference Include="Xamarin.Forms.Xaml, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.2.6355\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Core, Version=2.0.5575.11866, Culture=neutral, PublicKeyToken=d65109b36e5040e4">
-      <HintPath>..\..\packages\XLabs.Core.2.0.5575\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
+    <Reference Include="XLabs.Core, Version=2.0.5593.36785, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\XLabs.Core.2.0.5593\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Forms, Version=2.0.5575.11889, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\XLabs.Forms.2.0.5575\lib\MonoAndroid\XLabs.Forms.dll</HintPath>
+    <Reference Include="XLabs.Forms, Version=2.0.5593.36788, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\XLabs.Forms.2.0.5593\lib\MonoAndroid\XLabs.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Forms.Droid, Version=2.0.5575.11890, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\XLabs.Forms.2.0.5575\lib\MonoAndroid\XLabs.Forms.Droid.dll</HintPath>
+    <Reference Include="XLabs.Forms.Droid, Version=2.0.5593.36791, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\XLabs.Forms.2.0.5593\lib\MonoAndroid\XLabs.Forms.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Ioc, Version=2.0.5575.11879, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\XLabs.IoC.2.0.5575\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Ioc.dll</HintPath>
+    <Reference Include="XLabs.Ioc, Version=2.0.5593.36785, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\XLabs.IoC.2.0.5593\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Ioc.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Platform, Version=2.0.5575.11885, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\XLabs.Platform.2.0.5575\lib\MonoAndroid\XLabs.Platform.dll</HintPath>
+    <Reference Include="XLabs.Platform, Version=2.0.5593.36786, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\XLabs.Platform.2.0.5593\lib\MonoAndroid\XLabs.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Platform.Droid, Version=2.0.5575.11886, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\XLabs.Platform.2.0.5575\lib\MonoAndroid\XLabs.Platform.Droid.dll</HintPath>
+    <Reference Include="XLabs.Platform.Droid, Version=2.0.5593.36788, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\XLabs.Platform.2.0.5593\lib\MonoAndroid\XLabs.Platform.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="XLabs.Serialization, Version=2.0.5575.11858, Culture=neutral, PublicKeyToken=d65109b36e5040e4">
-      <HintPath>..\..\packages\XLabs.Serialization.2.0.5575\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.dll</HintPath>
+    <Reference Include="XLabs.Serialization, Version=2.0.5593.36785, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\XLabs.Serialization.2.0.5593\lib\portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LocalizationResources\AppResources.id-ID.Designer.cs">
-      <DependentUpon>AppResources.id-ID.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="LocalizationResources\AppResources.Designer.cs">
-      <DependentUpon>AppResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
+    <Compile Include="Localization\LocalizeAndroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,18 +146,11 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LocalizationResources\AppResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>FlagMySpace.Shared</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResources\AppResources.id-ID.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.id-ID.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>FlagMySpace.Shared</CustomToolNamespace>
-    </EmbeddedResource>
+    <ProjectReference Include="..\FlagMySpace.Portable\FlagMySpace.Portable.csproj">
+      <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
+      <Name>FlagMySpace.Portable</Name>
+    </ProjectReference>
   </ItemGroup>
-  <Import Project="..\FlagMySpace.Shared\FlagMySpace.Shared.projitems" Label="Shared" Condition="Exists('..\FlagMySpace.Shared\FlagMySpace.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

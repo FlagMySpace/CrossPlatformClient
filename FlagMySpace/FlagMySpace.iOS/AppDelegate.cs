@@ -1,7 +1,8 @@
-﻿using Foundation;
+﻿using FlagMySpace.Portable;
+using FlagMySpace.Portable.Bootstrap;
+using Foundation;
 using UIKit;
 using FlagMySpace.Shared;
-using FlagMySpace.Shared.Bootstrap;
 
 namespace FlagMySpace.iOS
 {
@@ -21,10 +22,8 @@ namespace FlagMySpace.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-
-            var bootstrapper = new NinjectBoostrapper();
-
-            LoadApplication(new App(bootstrapper));
+            
+            LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }

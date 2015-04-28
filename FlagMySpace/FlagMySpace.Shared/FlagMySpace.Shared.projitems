@@ -8,41 +8,4 @@
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>FlagMySpace.Shared</Import_RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Bootstrap\Bootstrapper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Bootstrap\NinjectBoostrapper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Common\ErrorHandler.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Localization\ILocalize.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Localization\LocalizeAndroid.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Localization\LoginPageLocalizationProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MockProvider\MockLoginProvider.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)NinjectModules\CommonModule.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)NinjectModules\LocalizationModule.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)NinjectModules\MockProviderModule.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)NinjectModules\ViewFactoryModule.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\RegisterPage.xaml.cs">
-      <DependentUpon>RegisterPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewFactory\IViewFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewFactory\ViewFactory.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegisterPageViewModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\LoginPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\RegisterPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
 </Project>

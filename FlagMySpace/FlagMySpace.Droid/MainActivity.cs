@@ -1,7 +1,8 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using FlagMySpace.Shared.Bootstrap;
+using FlagMySpace.Portable;
+using FlagMySpace.Portable.Bootstrap;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -16,9 +17,7 @@ namespace FlagMySpace.Shared
 
             Forms.Init(this, bundle);
 
-            var bootstrapper = new NinjectBoostrapper();
-
-            LoadApplication(new App(bootstrapper));
+            LoadApplication(new App());
         }
     }
 }
