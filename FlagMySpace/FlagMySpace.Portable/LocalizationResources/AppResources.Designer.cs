@@ -125,11 +125,38 @@ namespace FlagMySpace.Portable.LocalizationResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please write down your username and password.
+        /// </summary>
+        public static string LoginPageErrorLoginEmpty {
+            get {
+                return ResourceManager.GetString("LoginPageErrorLoginEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to password.
         /// </summary>
         public static string LoginPagePasswordPlaceholder {
             get {
                 return ResourceManager.GetString("LoginPagePasswordPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to register.
+        /// </summary>
+        public static string LoginPageRegister {
+            get {
+                return ResourceManager.GetString("LoginPageRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to login.
+        /// </summary>
+        public static string LoginPageTitle {
+            get {
+                return ResourceManager.GetString("LoginPageTitle", resourceCulture);
             }
         }
         

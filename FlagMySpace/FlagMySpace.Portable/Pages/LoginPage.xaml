@@ -6,6 +6,6 @@
   <StackLayout>
     <Entry x:Name="EntryUsername" Text="{Binding Username}" Placeholder="{Binding UsernamePlaceholder}"></Entry>
     <Entry x:Name="EntryPassword" Text="{Binding Password}" Placeholder="{Binding PasswordPlaceholder}" IsPassword="True"></Entry>
-    <Button Text="{Binding ButtonLoginText}"></Button>
+    <Button Text="{Binding ButtonLoginText}" Command="{Binding LoginCommand}"></Button>
   </StackLayout>
 </ContentPage>

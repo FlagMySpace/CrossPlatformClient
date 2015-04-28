@@ -29,10 +29,11 @@ namespace FlagMySpace.Portable.Bootstrap
                 AppResources.Culture = kernel.Get<ILocalize>().GetCurrentCultureInfo();
             }
             var viewFactory = kernel.Get<IViewFactory>();
-            var mainPage = viewFactory.Get<ILoginPageViewModel>();
-            var navigationPage = new NavigationPage(mainPage);
 
-            Application.MainPage = navigationPage;
+            var tabbedPage = kernel.Get<TabbedPage>();
+            tabbedPage.Children.Add(viewFactory.Get<ILoginPageViewModel>());
+            tabbedPage.Children.Add(viewFactory.Get<IRegisterPageViewModel>());
+            Application.MainPage = tabbedPage;
         }
 
         private IKernel ConfigureKernel()

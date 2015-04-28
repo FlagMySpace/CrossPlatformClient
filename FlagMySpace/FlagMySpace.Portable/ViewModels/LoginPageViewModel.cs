@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using FlagMySpace.Portable.Common;
+using FlagMySpace.Portable.LocalizationResources;
 using FlagMySpace.Portable.ViewFactory;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
@@ -21,6 +22,8 @@ namespace FlagMySpace.Portable.ViewModels
         string LoginFailedTitle { get; }
         string LoginFailedMessage { get; }
         string LoginFailedCancel { get; }
+        string TitleText { get; }
+        string ErrorLoginEmpty { get; }
     }
 
     public interface IPerson
@@ -54,7 +57,7 @@ namespace FlagMySpace.Portable.ViewModels
 
         public string Title
         {
-            get { return _title; }
+            get { return _title = _localizationProvider.TitleText; }
             set { SetProperty(ref _title, value); }
         }
 
@@ -96,6 +99,14 @@ namespace FlagMySpace.Portable.ViewModels
                             _localizationProvider.LoginFailedTitle,
                             _localizationProvider.LoginFailedCancel);
                 }
+            }
+            else
+            {
+                await
+                        _dialogs.AlertAsync(
+                            _localizationProvider.ErrorLoginEmpty,
+                            _localizationProvider.LoginFailedTitle,
+                            _localizationProvider.LoginFailedCancel);
             }
         }
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using FlagMySpace.Portable.Common;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.ViewFactory;

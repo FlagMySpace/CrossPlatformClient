@@ -141,6 +141,12 @@
   <data name="LoginPagePasswordPlaceholder" xml:space="preserve">
     <value>password</value>
   </data>
+  <data name="LoginPageRegister" xml:space="preserve">
+    <value>register</value>
+  </data>
+  <data name="LoginPageTitle" xml:space="preserve">
+    <value>login</value>
+  </data>
   <data name="LoginPageUsernamePlaceholder" xml:space="preserve">
     <value>username</value>
   </data>
@@ -151,5 +157,8 @@
   <data name="ResourceLanguage" xml:space="preserve">
     <value>en-US</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="LoginPageErrorLoginEmpty" xml:space="preserve">
+    <value>Please write down your username and password</value>
   </data>
 </root>

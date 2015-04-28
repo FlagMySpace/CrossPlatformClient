@@ -20,6 +20,13 @@ namespace FlagMySpace.Portable.Localization
             get { return AppResources.LoginFailedCancel; }
         }
 
+        public string TitleText
+        {
+            get { return AppResources.LoginPageTitle; }
+        }
+
+        public string ErrorLoginEmpty { get { return AppResources.LoginPageErrorLoginEmpty; } }
+
         public string ButtonLoginText
         {
             get { return AppResources.LoginPageButtonLoginText; }
