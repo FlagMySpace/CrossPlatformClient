@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlagMySpace.Shared.Pages.LoginPage"
+             x:Class="FlagMySpace.Portable.Pages.LoginPage"
              Title="{Binding Title}">
   <StackLayout>
     <Entry x:Name="EntryUsername" Text="{Binding Username}" Placeholder="{Binding UsernamePlaceholder}"></Entry>

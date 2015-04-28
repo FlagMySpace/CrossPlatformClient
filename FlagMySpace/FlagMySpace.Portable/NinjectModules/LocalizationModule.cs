@@ -9,11 +9,9 @@ namespace FlagMySpace.Portable.NinjectModules
     {
         public override void Load()
         {
-            Bind<ILoginPageLocalizationProvider>().To<LoginPageLocalizationProvider>();
 
             if (Device.OS == TargetPlatform.Android)
             {
-                Bind<ILocalize>().ToConstant(DependencyService.Get<ILocalize>());
             }
         }
     }

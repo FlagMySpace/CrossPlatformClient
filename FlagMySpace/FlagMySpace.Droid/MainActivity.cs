@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using FlagMySpace.Portable;
@@ -16,6 +17,11 @@ namespace FlagMySpace.Shared
             base.OnCreate(bundle);
 
             Forms.Init(this, bundle);
+
+            if (UserDialogs.Instance == null)
+            {
+                UserDialogs.Init(() => (Activity) Forms.Context);
+            }
 
             LoadApplication(new App());
         }

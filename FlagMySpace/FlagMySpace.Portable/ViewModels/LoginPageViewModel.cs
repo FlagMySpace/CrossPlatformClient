@@ -1,5 +1,6 @@
 ﻿using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using FlagMySpace.Portable.Common;
 using FlagMySpace.Portable.ViewFactory;
 using Xamarin.Forms;
@@ -28,7 +29,11 @@ namespace FlagMySpace.Portable.ViewModels
         string Email { get; set; }
     }
 
-    public class LoginPageViewModel : ViewModel
+    public interface ILoginPageViewModel :IViewModel
+    {
+    }
+
+    public class LoginPageViewModel : ViewModel, ILoginPageViewModel
     {
         private Command _loginCommand;
         private string _password;
@@ -37,12 +42,14 @@ namespace FlagMySpace.Portable.ViewModels
         private readonly IViewFactory _viewFactory;
         private readonly ILoginProvider _loginProvider;
         private readonly ILoginPageLocalizationProvider _localizationProvider;
+        private readonly IUserDialogs _dialogs;
 
-        public LoginPageViewModel(IViewFactory viewFactory, ILoginProvider loginProvider, ILoginPageLocalizationProvider localizationProvider)
+        public LoginPageViewModel(IViewFactory viewFactory, ILoginProvider loginProvider, ILoginPageLocalizationProvider localizationProvider, IUserDialogs dialogs)
         {
             _viewFactory = viewFactory;
             _loginProvider = loginProvider;
             _localizationProvider = localizationProvider;
+            _dialogs = dialogs;
         }
 
         public string Title
@@ -70,10 +77,9 @@ namespace FlagMySpace.Portable.ViewModels
 
         private async void ErrorThrown(IError error, ExceptionDispatchInfo exceptionDispatchInfo)
         {
-            var page = _viewFactory.GetFromViewModel(this);
-            await page.DisplayAlert(
-                _localizationProvider.LoginFailedTitle,
+            await _dialogs.AlertAsync(
                 exceptionDispatchInfo.SourceException.Message,
+                _localizationProvider.LoginFailedTitle,
                 _localizationProvider.LoginFailedCancel);
         }
 
@@ -85,10 +91,9 @@ namespace FlagMySpace.Portable.ViewModels
                 if (!doLogin)
                 {
                     await
-                        _viewFactory.GetFromViewModel(this)
-                            .DisplayAlert(
-                            _localizationProvider.LoginFailedTitle,
+                        _dialogs.AlertAsync(
                             _localizationProvider.LoginFailedMessage,
+                            _localizationProvider.LoginFailedTitle,
                             _localizationProvider.LoginFailedCancel);
                 }
             }

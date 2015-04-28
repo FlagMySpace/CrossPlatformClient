@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace FlagMySpace.Shared.Pages
+namespace FlagMySpace.Portable.Pages
 {
     public partial class RegisterPage : ContentPage
     {

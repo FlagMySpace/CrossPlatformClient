@@ -17,7 +17,5 @@ namespace FlagMySpace.Portable.ViewFactory
 
         Page Get<TViewModel>(TViewModel viewModel)
             where TViewModel : class, IViewModel;
-
-        Page GetFromViewModel(IViewModel viewModel);
     }
 }

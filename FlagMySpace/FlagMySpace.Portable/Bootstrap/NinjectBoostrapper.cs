@@ -1,51 +1,50 @@
 ﻿using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.LocalizationResources;
 using FlagMySpace.Portable.NinjectModules;
+using FlagMySpace.Portable.Pages;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
-using FlagMySpace.Shared.Pages;
 using Ninject;
-using Ninject.Modules;
 using Xamarin.Forms;
 
 namespace FlagMySpace.Portable.Bootstrap
 {
-    public class NinjectBoostrapper : Bootstrapper
+    public class NinjectBoostrapper
     {
-        public NinjectBoostrapper(params INinjectModule[] modules)
+        private Application Application { get; set; }
+
+        public void Run(Application application)
         {
-            Modules = modules;
+            Application = application;
+            var kernel = ConfigureKernel();
+            var viewFactory = kernel.Get<IViewFactory>();
+            RegisterViews(viewFactory);
+            ConfigureApplication(kernel);
         }
 
-        public INinjectModule[] Modules { get; set; }
-
-        protected override void ConfigureApplication(IKernel kernel)
+        private void ConfigureApplication(IKernel kernel)
         {
             if (Device.OS != TargetPlatform.WinPhone)
             {
                 AppResources.Culture = kernel.Get<ILocalize>().GetCurrentCultureInfo();
             }
             var viewFactory = kernel.Get<IViewFactory>();
-            var mainPage = viewFactory.Get<LoginPageViewModel>();
+            var mainPage = viewFactory.Get<ILoginPageViewModel>();
             var navigationPage = new NavigationPage(mainPage);
 
             Application.MainPage = navigationPage;
         }
 
-        protected override IKernel ConfigureKernel()
+        private IKernel ConfigureKernel()
         {
-            var kernel = new StandardKernel(
-                new ViewFactoryModule(),
-                new CommonModule(),
-                new MockProviderModule(),
-                new LocalizationModule());
+            var kernel = new StandardKernel(new FlagMySpaceModule(), new MockProviderModule());
             return kernel;
         }
 
-        protected override void RegisterViews(IViewFactory viewFactory)
+        private void RegisterViews(IViewFactory viewFactory)
         {
-            viewFactory.Set<LoginPageViewModel, LoginPage>();
-            viewFactory.Set<RegisterPageViewModel, RegisterPage>();
+            viewFactory.Set<ILoginPageViewModel, LoginPage>();
+            viewFactory.Set<IRegisterPageViewModel, RegisterPage>();
         }
     }
 }

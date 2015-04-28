@@ -1,8 +1,8 @@
-﻿using FlagMySpace.Portable;
+﻿using Acr.UserDialogs;
+using FlagMySpace.Portable;
 using FlagMySpace.Portable.Bootstrap;
 using Foundation;
 using UIKit;
-using FlagMySpace.Shared;
 
 namespace FlagMySpace.iOS
 {
@@ -22,7 +22,12 @@ namespace FlagMySpace.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            
+
+            if (UserDialogs.Instance == null)
+            {
+                UserDialogs.Init();
+            }
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

@@ -7,7 +7,6 @@ namespace FlagMySpace.Portable.NinjectModules
     {
         public override void Load()
         {
-            Bind<IViewFactory>().To<ViewFactory.ViewFactory>().InSingletonScope();
         }
     }
 }
