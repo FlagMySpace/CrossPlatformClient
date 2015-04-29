@@ -13,6 +13,7 @@ namespace FlagMySpace.Portable.NinjectModules
         public override void Load()
         {
             // View Factory
+            Bind<IIoCProvider>().To<IoCNinject>();
             Bind<IViewFactory>().To<ViewFactory.ViewFactory>().InSingletonScope();
 
             // Localization

@@ -9,7 +9,7 @@ namespace FlagMySpace.Portable
         public App()
         {
             InitializeComponent();
-            var bootstrapper = new NinjectBoostrapper();
+            var bootstrapper = new SimpleInjectorBootstrapper();
             bootstrapper.Run(this);
         }
     }

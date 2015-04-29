@@ -170,6 +170,12 @@
       <HintPath>..\..\packages\Parse.1.4.1\lib\wp8\Parse.Phone.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleInjector">
+      <HintPath>..\..\packages\SimpleInjector.2.7.3\lib\portable-net4+sl4+wp8+win8+wpa81\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Diagnostics">
+      <HintPath>..\..\packages\SimpleInjector.2.7.3\lib\portable-net4+sl4+wp8+win8+wpa81\SimpleInjector.Diagnostics.dll</HintPath>
+    </Reference>
     <Reference Include="WPControls">
       <HintPath>..\..\packages\WPControls.1.5.2\lib\wp8\WPControls.dll</HintPath>
     </Reference>
