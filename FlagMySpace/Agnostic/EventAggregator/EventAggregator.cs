@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Agnostic.EventAggregator
+namespace FlagMySpace.Agnostic.EventAggregator
 {
     /// <summary>
     ///     Enables loosely-coupled publication of and subscription to events.

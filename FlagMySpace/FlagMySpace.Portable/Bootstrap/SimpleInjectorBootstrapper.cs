@@ -1,7 +1,8 @@
 ﻿using Acr.UserDialogs;
-using Agnostic.Error;
+using FlagMySpace.Agnostic.Error;
+using FlagMySpace.Agnostic.EventAggregator;
+using FlagMySpace.Agnostic.Login;
 using FlagMySpace.Portable.Localization;
-using FlagMySpace.Portable.MockProvider;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
 using SimpleInjector;
@@ -14,27 +15,23 @@ namespace FlagMySpace.Portable.Bootstrap
         protected override IIoCProvider ConfigureContainer()
         {
             var container = new Container();
-
-            //View Factory
+            // View Factory
             container.Register<IIoCProvider, IoCSimpleContainer>();
             container.RegisterSingle<IViewFactory, ViewFactory.ViewFactory>();
-
             // Localization
             container.Register<ILocalize>(() => DependencyService.Get<ILocalize>());
             container.Register<ILoginPageLocalizationProvider, LoginPageLocalizationProvider>();
-
-            // Common
-            container.Register<IErrorService, ErrorService>();
-
             // User dialog
-            container.RegisterSingle<IUserDialogs>(() => UserDialogs.Instance);
-
+            container.RegisterSingle(() => UserDialogs.Instance);
             // View Model
             container.Register<ILoginPageViewModel, LoginPageViewModel>();
             container.Register<IRegisterPageViewModel, RegisterPageViewModel>();
-
-            // Mock Service
+            // Login
             container.Register<ILoginProvider, MockLoginProvider>();
+            // Error
+            container.Register<IErrorService, ErrorService>();
+            // Event Aggregator
+            container.RegisterSingle<IEventAggregator, EventAggregator>(;
 
 #if DEBUG
             container.Verify();

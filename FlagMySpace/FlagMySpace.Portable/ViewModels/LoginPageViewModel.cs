@@ -1,53 +1,28 @@
-﻿using System.Runtime.ExceptionServices;
-using System.Threading.Tasks;
-using Acr.UserDialogs;
-using Agnostic.Error;
-using FlagMySpace.Portable.LocalizationResources;
+﻿using Acr.UserDialogs;
+using FlagMySpace.Agnostic.Login;
+using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.ViewFactory;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.Portable.ViewModels
 {
-    public interface ILoginProvider
-    {
-        Task<bool> Login();
-    }
-
-    public interface ILoginPageLocalizationProvider
-    {
-        string ButtonLoginText { get; }
-        string UsernamePlaceholder { get; }
-        string PasswordPlaceholder { get; }
-        string LoginFailedTitle { get; }
-        string LoginFailedMessage { get; }
-        string LoginFailedCancel { get; }
-        string TitleText { get; }
-        string ErrorLoginEmpty { get; }
-    }
-
-    public interface IPerson
-    {
-        string Username { get; set; }
-        string Email { get; set; }
-    }
-
-    public interface ILoginPageViewModel :IViewModel
-    {
-    }
-
     public class LoginPageViewModel : ViewModel, ILoginPageViewModel
     {
+        private readonly IUserDialogs _dialogs;
+        private readonly ILoginPageLocalizationProvider _localizationProvider;
+        private readonly ILoginProvider _loginProvider;
+        private readonly IViewFactory _viewFactory;
         private Command _loginCommand;
+        private string _mButtonLoginText;
+        private string _mPasswordPlaceholder;
+        private string _mUsernamePlaceholder;
         private string _password;
         private string _title;
         private string _username;
-        private readonly IViewFactory _viewFactory;
-        private readonly ILoginProvider _loginProvider;
-        private readonly ILoginPageLocalizationProvider _localizationProvider;
-        private readonly IUserDialogs _dialogs;
 
-        public LoginPageViewModel(IViewFactory viewFactory, ILoginProvider loginProvider, ILoginPageLocalizationProvider localizationProvider, IUserDialogs dialogs)
+        public LoginPageViewModel(IViewFactory viewFactory, ILoginProvider loginProvider,
+            ILoginPageLocalizationProvider localizationProvider, IUserDialogs dialogs)
         {
             _viewFactory = viewFactory;
             _loginProvider = loginProvider;
@@ -78,19 +53,41 @@ namespace FlagMySpace.Portable.ViewModels
             get { return _loginCommand ?? (_loginCommand = new Command(Login)); }
         }
 
-        private async void ErrorThrown(IErrorService error, ExceptionDispatchInfo exceptionDispatchInfo)
+        public string UsernamePlaceholder
         {
-            await _dialogs.AlertAsync(
-                exceptionDispatchInfo.SourceException.Message,
-                _localizationProvider.LoginFailedTitle,
-                _localizationProvider.LoginFailedCancel);
+            get
+            {
+                _mUsernamePlaceholder = _localizationProvider.UsernamePlaceholder;
+                return _mUsernamePlaceholder;
+            }
+            set { SetProperty(ref _mUsernamePlaceholder, value); }
+        }
+
+        public string PasswordPlaceholder
+        {
+            get
+            {
+                _mPasswordPlaceholder = _localizationProvider.PasswordPlaceholder;
+                return _mPasswordPlaceholder;
+            }
+            set { SetProperty(ref _mPasswordPlaceholder, value); }
+        }
+
+        public string ButtonLoginText
+        {
+            get
+            {
+                _mButtonLoginText = _localizationProvider.ButtonLoginText;
+                return _mButtonLoginText;
+            }
+            set { SetProperty(ref _mButtonLoginText, value); }
         }
 
         private async void Login()
         {
             if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
             {
-                var doLogin = await _loginProvider.Login();
+                var doLogin = await _loginProvider.LoginAsync();
                 if (!doLogin)
                 {
                     await
@@ -103,52 +100,10 @@ namespace FlagMySpace.Portable.ViewModels
             else
             {
                 await
-                        _dialogs.AlertAsync(
-                            _localizationProvider.ErrorLoginEmpty,
-                            _localizationProvider.LoginFailedTitle,
-                            _localizationProvider.LoginFailedCancel);
-            }
-        }
-
-        private string _mUsernamePlaceholder;
-        public string UsernamePlaceholder
-        {
-            get
-            {
-                _mUsernamePlaceholder = _localizationProvider.UsernamePlaceholder;
-                return _mUsernamePlaceholder;
-            }
-            set
-            {
-                SetProperty(ref _mUsernamePlaceholder, value);
-            }
-        }
-
-        private string _mPasswordPlaceholder;
-        public string PasswordPlaceholder
-        {
-            get
-            {
-                _mPasswordPlaceholder = _localizationProvider.PasswordPlaceholder;
-                return _mPasswordPlaceholder;
-            }
-            set
-            {
-                SetProperty(ref _mPasswordPlaceholder, value);
-            }
-        }
-
-        private string _mButtonLoginText;
-        public string ButtonLoginText
-        {
-            get
-            {
-                _mButtonLoginText = _localizationProvider.ButtonLoginText;
-                return _mButtonLoginText;
-            }
-            set
-            {
-                SetProperty(ref _mButtonLoginText, value);
+                    _dialogs.AlertAsync(
+                        _localizationProvider.ErrorLoginEmpty,
+                        _localizationProvider.LoginFailedTitle,
+                        _localizationProvider.LoginFailedCancel);
             }
         }
     }

@@ -1,4 +1,4 @@
-namespace Agnostic.EventAggregator
+namespace FlagMySpace.Agnostic.EventAggregator
 {
     /// <summary>
     ///     Denotes a class which can handle a particular type of message.

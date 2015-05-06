@@ -1,4 +1,4 @@
-﻿using FlagMySpace.Portable.MockProvider;
+﻿using FlagMySpace.Agnostic.Login;
 using FlagMySpace.Portable.ViewModels;
 using Ninject.Modules;
 

@@ -2,7 +2,7 @@
 
 namespace FlagMySpace.Portable.ViewModels
 {
-    public class RegisterPageViewModel : ViewModel, IRegisterPageViewModel
+    public interface ILoginPageViewModel :IViewModel
     {
     }
 }

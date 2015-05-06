@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C2C6B5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagMySpace.Portable", "FlagMySpace\FlagMySpace.Portable\FlagMySpace.Portable.csproj", "{67F9D3A8-F71E-4428-913F-C37AE82CDB24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agnostic", "FlagMySpace\Agnostic\Agnostic.csproj", "{8E460629-576C-4FC1-9E7D-EAF1C40F6503}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagMySpace.Agnostic", "FlagMySpace\Agnostic\FlagMySpace.Agnostic.csproj", "{8E460629-576C-4FC1-9E7D-EAF1C40F6503}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

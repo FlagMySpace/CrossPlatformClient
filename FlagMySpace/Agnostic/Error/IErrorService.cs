@@ -1,6 +1,6 @@
 using System;
 
-namespace Agnostic.Error
+namespace FlagMySpace.Agnostic.Error
 {
     public interface IErrorService
     {

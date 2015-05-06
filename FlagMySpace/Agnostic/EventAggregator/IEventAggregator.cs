@@ -1,6 +1,6 @@
 using System;
 
-namespace Agnostic.EventAggregator
+namespace FlagMySpace.Agnostic.EventAggregator
 {
     /// <summary>
     ///   Enables loosely-coupled publication of and subscription to events.

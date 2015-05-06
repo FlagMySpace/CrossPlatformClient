@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Agnostic.EventAggregator {
+namespace FlagMySpace.Agnostic.EventAggregator {
     /// <summary>
     /// Generic extension methods used by the framework.
     /// </summary>

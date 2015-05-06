@@ -8,8 +8,8 @@
     <ProjectGuid>{8E460629-576C-4FC1-9E7D-EAF1C40F6503}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Agnostic</RootNamespace>
-    <AssemblyName>Agnostic</AssemblyName>
+    <RootNamespace>FlagMySpace.Agnostic</RootNamespace>
+    <AssemblyName>FlagMySpace.Agnostic</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -40,6 +40,9 @@
     <Compile Include="EventAggregator\ExtensionMethods.cs" />
     <Compile Include="EventAggregator\IEventAggregator.cs" />
     <Compile Include="EventAggregator\IHandle.cs" />
+    <Compile Include="Login\ILoginProvider.cs" />
+    <Compile Include="Login\MockLoginProvider.cs" />
+    <Compile Include="Person\IPerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Error\ErrorService.cs" />
     <Compile Include="Error\IErrorService.cs" />

@@ -1,5 +1,5 @@
 ﻿using Acr.UserDialogs;
-using Agnostic.Error;
+using FlagMySpace.Agnostic.Error;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
