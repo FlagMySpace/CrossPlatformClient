@@ -1,5 +1,5 @@
 ﻿using Acr.UserDialogs;
-using FlagMySpace.Portable.Common;
+using Agnostic.Error;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
@@ -21,7 +21,7 @@ namespace FlagMySpace.Portable.NinjectModules
             Bind<ILoginPageLocalizationProvider>().To<LoginPageLocalizationProvider>();
 
             // Common
-            Bind<IError>().To<ErrorHandler>().InSingletonScope();
+            Bind<IErrorService>().To<ErrorService>().InSingletonScope();
 
             // User dialog
             Bind<IUserDialogs>().ToConstant(UserDialogs.Instance).InSingletonScope();

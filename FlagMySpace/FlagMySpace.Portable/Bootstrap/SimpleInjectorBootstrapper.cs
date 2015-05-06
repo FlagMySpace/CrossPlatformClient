@@ -1,5 +1,5 @@
 ﻿using Acr.UserDialogs;
-using FlagMySpace.Portable.Common;
+using Agnostic.Error;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.MockProvider;
 using FlagMySpace.Portable.ViewFactory;
@@ -24,7 +24,7 @@ namespace FlagMySpace.Portable.Bootstrap
             container.Register<ILoginPageLocalizationProvider, LoginPageLocalizationProvider>();
 
             // Common
-            container.Register<IError, ErrorHandler>();
+            container.Register<IErrorService, ErrorService>();
 
             // User dialog
             container.RegisterSingle<IUserDialogs>(() => UserDialogs.Instance);

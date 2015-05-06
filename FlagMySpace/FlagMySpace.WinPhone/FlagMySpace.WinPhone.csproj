@@ -110,6 +110,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -218,6 +219,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Agnostic\Agnostic.csproj">
+      <Project>{8e460629-576c-4fc1-9e7d-eaf1c40f6503}</Project>
+      <Name>Agnostic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FlagMySpace.Portable\FlagMySpace.Portable.csproj">
       <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
       <Name>FlagMySpace.Portable</Name>

@@ -1,7 +1,7 @@
 ﻿using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
-using FlagMySpace.Portable.Common;
+using Agnostic.Error;
 using FlagMySpace.Portable.LocalizationResources;
 using FlagMySpace.Portable.ViewFactory;
 using Xamarin.Forms;
@@ -78,7 +78,7 @@ namespace FlagMySpace.Portable.ViewModels
             get { return _loginCommand ?? (_loginCommand = new Command(Login)); }
         }
 
-        private async void ErrorThrown(IError error, ExceptionDispatchInfo exceptionDispatchInfo)
+        private async void ErrorThrown(IErrorService error, ExceptionDispatchInfo exceptionDispatchInfo)
         {
             await _dialogs.AlertAsync(
                 exceptionDispatchInfo.SourceException.Message,
