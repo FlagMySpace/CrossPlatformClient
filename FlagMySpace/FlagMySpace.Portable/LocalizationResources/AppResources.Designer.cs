@@ -89,15 +89,6 @@ namespace FlagMySpace.Portable.LocalizationResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OK.
-        /// </summary>
-        public static string LoginFailedCancel {
-            get {
-                return ResourceManager.GetString("LoginFailedCancel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please check your username and password.
         /// </summary>
         public static string LoginFailedMessage {
@@ -134,24 +125,6 @@ namespace FlagMySpace.Portable.LocalizationResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to password.
-        /// </summary>
-        public static string LoginPagePasswordPlaceholder {
-            get {
-                return ResourceManager.GetString("LoginPagePasswordPlaceholder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to register.
-        /// </summary>
-        public static string LoginPageRegister {
-            get {
-                return ResourceManager.GetString("LoginPageRegister", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to login.
         /// </summary>
         public static string LoginPageTitle {
@@ -161,11 +134,29 @@ namespace FlagMySpace.Portable.LocalizationResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to username.
+        ///   Looks up a localized string similar to OK.
         /// </summary>
-        public static string LoginPageUsernamePlaceholder {
+        public static string Ok {
             get {
-                return ResourceManager.GetString("LoginPageUsernamePlaceholder", resourceCulture);
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to register.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
             }
         }
         
@@ -184,6 +175,15 @@ namespace FlagMySpace.Portable.LocalizationResources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to username.
+        /// </summary>
+        public static string Username {
+            get {
+                return ResourceManager.GetString("Username", resourceCulture);
             }
         }
     }

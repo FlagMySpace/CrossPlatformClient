@@ -126,7 +126,7 @@
   <data name="ApplicationTitle" xml:space="preserve">
     <value>MY APPLICATION</value>
   </data>
-  <data name="LoginFailedCancel" xml:space="preserve">
+  <data name="Ok" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="LoginFailedMessage" xml:space="preserve">
@@ -138,16 +138,16 @@
   <data name="LoginPageButtonLoginText" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="LoginPagePasswordPlaceholder" xml:space="preserve">
+  <data name="Password" xml:space="preserve">
     <value>password</value>
   </data>
-  <data name="LoginPageRegister" xml:space="preserve">
+  <data name="Register" xml:space="preserve">
     <value>register</value>
   </data>
   <data name="LoginPageTitle" xml:space="preserve">
     <value>login</value>
   </data>
-  <data name="LoginPageUsernamePlaceholder" xml:space="preserve">
+  <data name="Username" xml:space="preserve">
     <value>username</value>
   </data>
   <data name="ResourceFlowDirection" xml:space="preserve">

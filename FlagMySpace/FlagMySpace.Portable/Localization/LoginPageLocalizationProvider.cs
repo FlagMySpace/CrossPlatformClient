@@ -1,5 +1,4 @@
 ﻿using FlagMySpace.Portable.LocalizationResources;
-using FlagMySpace.Portable.ViewModels;
 
 namespace FlagMySpace.Portable.Localization
 {
@@ -17,7 +16,7 @@ namespace FlagMySpace.Portable.Localization
 
         public string LoginFailedCancel
         {
-            get { return AppResources.LoginFailedCancel; }
+            get { return AppResources.Ok; }
         }
 
         public string TitleText
@@ -36,16 +35,13 @@ namespace FlagMySpace.Portable.Localization
         {
             get
             {
-                return AppResources.LoginPageUsernamePlaceholder; 
+                return AppResources.Username; 
             }
         }
 
         public string PasswordPlaceholder
         {
-            get
-            {
-                return AppResources.LoginPagePasswordPlaceholder;
-            }
+            get { return AppResources.Password; }
         }
     }
 }

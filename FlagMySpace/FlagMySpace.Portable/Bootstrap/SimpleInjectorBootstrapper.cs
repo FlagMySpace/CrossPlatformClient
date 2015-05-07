@@ -31,7 +31,7 @@ namespace FlagMySpace.Portable.Bootstrap
             // Error
             container.Register<IErrorService, ErrorService>();
             // Event Aggregator
-            container.RegisterSingle<IEventAggregator, EventAggregator>(;
+			container.RegisterSingle<IEventAggregator, EventAggregator>();
 
 #if DEBUG
             container.Verify();
