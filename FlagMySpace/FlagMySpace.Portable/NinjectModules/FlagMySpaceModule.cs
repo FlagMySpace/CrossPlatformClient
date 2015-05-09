@@ -1,5 +1,7 @@
 ﻿using Acr.UserDialogs;
 using FlagMySpace.Agnostic.Error;
+using FlagMySpace.Agnostic.IoC;
+using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
@@ -13,7 +15,7 @@ namespace FlagMySpace.Portable.NinjectModules
         public override void Load()
         {
             // View Factory
-            Bind<IIoCProvider>().To<IoCNinject>();
+            Bind<IIoC>().To<IoCNinject>();
             Bind<IViewFactory>().To<ViewFactory.ViewFactory>().InSingletonScope();
 
             // Localization

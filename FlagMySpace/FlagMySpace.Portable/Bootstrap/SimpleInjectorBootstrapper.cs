@@ -1,7 +1,9 @@
 ﻿using Acr.UserDialogs;
 using FlagMySpace.Agnostic.Error;
 using FlagMySpace.Agnostic.EventAggregator;
+using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Agnostic.Login;
+using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.Pages;
 using FlagMySpace.Portable.ViewFactory;
@@ -13,17 +15,18 @@ namespace FlagMySpace.Portable.Bootstrap
 {
     public class SimpleInjectorBootstrapper : BootstrapperBase
     {
-        protected override IIoCProvider ConfigureContainer()
+        protected override IIoC ConfigureContainer()
         {
             var container = new Container();
             // Event Aggregator
             container.RegisterSingle<IEventAggregator, EventAggregator>();
             // View Factory
-            container.Register<IIoCProvider, IoCSimpleContainer>();
+            container.Register<IIoC, IoCSimpleContainer>();
             container.RegisterSingle<IViewFactory, ViewFactory.ViewFactory>();
             // Localization
             container.Register(() => DependencyService.Get<ILocalize>());
             container.Register<ILoginPageLocalizationProvider, LoginPageLocalizationProvider>();
+            container.Register<IRegisterPageLocalization, RegisterPageLocalization>();
             // User dialog
             container.RegisterSingle(() => UserDialogs.Instance);
             // View
@@ -33,7 +36,7 @@ namespace FlagMySpace.Portable.Bootstrap
             container.Register<ILoginPageViewModel, LoginPageViewModel>();
             container.Register<IRegisterPageViewModel, RegisterPageViewModel>();
             // Login
-            container.Register<ILoginProvider, MockLoginProvider>();
+            container.Register<ILoginService, MockLoginService>();
             // Error
             container.Register<IErrorService, ErrorService>();
 

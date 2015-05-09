@@ -15,7 +15,7 @@ namespace FlagMySpace.Portable.ViewModels
         private readonly IUserDialogs _dialogs;
         private readonly IEventAggregator _eventAggregator;
         private readonly ILoginPageLocalizationProvider _localizationProvider;
-        private readonly ILoginProvider _loginProvider;
+        private readonly ILoginService _loginProvider;
         private readonly IViewFactory _viewFactory;
         private ICommand _loginCommand;
         private string _mButtonLoginText;
@@ -27,7 +27,7 @@ namespace FlagMySpace.Portable.ViewModels
 
         public LoginPageViewModel(
             IViewFactory viewFactory,
-            ILoginProvider loginProvider,
+            ILoginService loginProvider,
             ILoginPageLocalizationProvider localizationProvider,
             IUserDialogs dialogs,
             IEventAggregator eventAggregator)
@@ -43,14 +43,18 @@ namespace FlagMySpace.Portable.ViewModels
         {
             if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
             {
-                var doLogin = await _loginProvider.LoginAsync();
-                if (!doLogin)
+                var result = await _loginProvider.LoginAsync();
+                if (!result.Status)
                 {
                     await
                         _dialogs.AlertAsync(
-                            _localizationProvider.LoginFailedMessage,
+                            result.Message,
                             _localizationProvider.LoginFailedTitle,
                             _localizationProvider.LoginFailedCancel);
+                }
+                else
+                {
+                    //TODO: redirect user after successful login.
                 }
             }
             else

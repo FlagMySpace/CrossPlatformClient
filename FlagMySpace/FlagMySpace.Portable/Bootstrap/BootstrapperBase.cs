@@ -1,3 +1,4 @@
+using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.LocalizationResources;
 using FlagMySpace.Portable.Pages;
@@ -19,9 +20,9 @@ namespace FlagMySpace.Portable.Bootstrap
             ConfigureApplication(container);
         }
 
-        protected abstract IIoCProvider ConfigureContainer();
+        protected abstract IIoC ConfigureContainer();
 
-        private void ConfigureApplication(IIoCProvider container)
+        private void ConfigureApplication(IIoC container)
         {
             if (Device.OS != TargetPlatform.WinPhone)
             {

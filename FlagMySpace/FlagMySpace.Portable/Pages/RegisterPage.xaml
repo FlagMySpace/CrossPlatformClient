@@ -13,6 +13,6 @@
     <Entry Text="{Binding Password}" Placeholder="{Binding PlaceholderPassword}" IsPassword="True"></Entry>
     <Entry Text="{Binding ConfirmPassword}" Placeholder="{Binding PlaceholderConfirmPassword}" IsPassword="True"></Entry>
     <Entry Text="{Binding Email}" Placeholder="{Binding PlaceholderEmail}"></Entry>
-    <Button Text="{Binding TextRegister}"></Button>
+    <Button Text="{Binding TextRegister}" Command="{Binding RegisterCommand}"></Button>
   </StackLayout>
 </ContentPage>

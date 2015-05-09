@@ -40,12 +40,16 @@
     <Compile Include="EventAggregator\ExtensionMethods.cs" />
     <Compile Include="EventAggregator\IEventAggregator.cs" />
     <Compile Include="EventAggregator\IHandle.cs" />
-    <Compile Include="Login\ILoginProvider.cs" />
-    <Compile Include="Login\MockLoginProvider.cs" />
-    <Compile Include="Person\IPerson.cs" />
+    <Compile Include="IoC\IIoC.cs" />
+    <Compile Include="Login\ILoginService.cs" />
+    <Compile Include="Login\MockLoginService.cs" />
+    <Compile Include="Person\PersonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Error\ErrorService.cs" />
     <Compile Include="Error\IErrorService.cs" />
+    <Compile Include="Register\IRegisterService.cs" />
+    <Compile Include="Register\MockRegisterService.cs" />
+    <Compile Include="Register\ResultModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

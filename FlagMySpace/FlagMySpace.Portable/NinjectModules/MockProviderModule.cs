@@ -8,7 +8,7 @@ namespace FlagMySpace.Portable.NinjectModules
     {
         public override void Load()
         {
-            Bind<ILoginProvider>().To<MockLoginProvider>();
+            Bind<ILoginService>().To<MockLoginService>();
         }
     }
 }

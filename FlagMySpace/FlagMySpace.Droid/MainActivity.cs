@@ -3,14 +3,13 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using FlagMySpace.Portable;
-using FlagMySpace.Portable.Bootstrap;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using XLabs.Forms;
 
-namespace FlagMySpace.Shared
+namespace FlagMySpace.Droid
 {
     [Activity(Label = "FlagMySpace", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : FormsApplicationActivity
+    public class MainActivity : XFormsApplicationDroid
     {
         protected override void OnCreate(Bundle bundle)
         {

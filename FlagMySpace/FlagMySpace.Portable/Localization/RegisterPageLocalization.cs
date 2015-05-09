@@ -33,5 +33,15 @@ namespace FlagMySpace.Portable.Localization
         {
             get { return AppResources.RegisterPageLocalization_PlaceholderUsername_username; }
         }
+
+        public string RegisterInformation
+        {
+            get { return AppResources.RegisterPageLocalization_RegisterInformation_Information; }
+        }
+
+        public string Ok
+        {
+            get { return AppResources.Ok; }
+        }
     }
 }

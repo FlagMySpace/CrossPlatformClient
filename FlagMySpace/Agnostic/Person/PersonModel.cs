@@ -1,6 +1,6 @@
 ﻿namespace FlagMySpace.Agnostic.Person
 {
-    public interface IPerson
+    public class PersonModel
     {
         string Username { get; set; }
         string Email { get; set; }

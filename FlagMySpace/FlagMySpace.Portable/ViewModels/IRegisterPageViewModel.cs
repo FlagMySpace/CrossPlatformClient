@@ -1,4 +1,5 @@
-﻿using XLabs.Forms.Mvvm;
+﻿using System.Windows.Input;
+using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.Portable.ViewModels
 {
@@ -14,5 +15,6 @@ namespace FlagMySpace.Portable.ViewModels
         string TextRegister { get; set; }
         string ConfirmPassword { get; }
         string Email { get; }
+        ICommand RegisterCommand { get; }
     }
 }

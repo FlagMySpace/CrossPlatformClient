@@ -1,65 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Portable.Pages;
-using Ninject;
-using SimpleInjector;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.Portable.ViewFactory
 {
-    public interface IIoCProvider
-    {
-        T Get<T>() where T : class;
-        object Get(Type viewType);
-    }
-
-    class IoCSimpleContainer : IIoCProvider
-    {
-        private readonly Container _provider;
-
-        public IoCSimpleContainer(Container provider)
-        {
-            _provider = provider;
-        }
-
-        public T Get<T>() where T : class
-        {
-            return _provider.GetInstance<T>();
-        }
-
-        public object Get(Type viewType)
-        {
-            return _provider.GetInstance(viewType);
-        }
-    }
-
-    public class IoCNinject : IIoCProvider
-    {
-        private readonly IKernel _kernel;
-
-        public IoCNinject(IKernel kernel)
-        {
-            _kernel = kernel;
-        }
-
-        public object Get(Type viewType)
-        {
-            return _kernel.Get(viewType);
-        }
-
-        public T Get<T>() where T : class
-        {
-            return _kernel.Get<T>();
-        }
-    }
-
     public class ViewFactory : IViewFactory
     {
         private readonly IDictionary<Type, Type> _map = new Dictionary<Type, Type>();
-        private readonly IIoCProvider _provider;
+        private readonly IIoC _provider;
 
-        public ViewFactory(IIoCProvider provider)
+        public ViewFactory(IIoC provider)
         {
             _provider = provider;
         }

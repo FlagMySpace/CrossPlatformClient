@@ -8,5 +8,7 @@ namespace FlagMySpace.Portable.Localization
         string TextRegister { get; }
         string PlaceholderConfirmPassword { get; }
         string PlaceholderUsername { get; }
+        string RegisterInformation { get; }
+        string Ok { get; }
     }
 }

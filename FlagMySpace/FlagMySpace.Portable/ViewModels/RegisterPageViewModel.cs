@@ -1,4 +1,9 @@
-﻿using FlagMySpace.Portable.Localization;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
+using Acr.UserDialogs;
+using FlagMySpace.Agnostic.Register;
+using FlagMySpace.Portable.Localization;
+using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.Portable.ViewModels
@@ -6,10 +11,14 @@ namespace FlagMySpace.Portable.ViewModels
     public class RegisterPageViewModel : ViewModel, IRegisterPageViewModel
     {
         private readonly IRegisterPageLocalization _localization;
+        private readonly IRegisterService _registerService;
+        private readonly IUserDialogs _userDialogs;
 
-        public RegisterPageViewModel(IRegisterPageLocalization localization)
+        public RegisterPageViewModel(IRegisterPageLocalization localization, IRegisterService registerService, IUserDialogs userDialogs)
         {
             _localization = localization;
+            _registerService = registerService;
+            _userDialogs = userDialogs;
         }
 
         #region PropertyBinding
@@ -52,6 +61,24 @@ namespace FlagMySpace.Portable.ViewModels
         {
             get { return _mEmail; }
             set { SetProperty(ref _mEmail, value); }
+        }
+
+        private ICommand _mRegisterCommand;
+        public ICommand RegisterCommand
+        {
+            get { return _mRegisterCommand ?? (_mRegisterCommand = new Command(async () => await Register())); }
+        }
+
+        private async Task Register()
+        {
+            var result = await _registerService.RegisterAsync(Username, Password, Email);
+            await
+                _userDialogs.AlertAsync(result.Message, _localization.RegisterInformation,
+                    _localization.Ok);
+            if (result.Status)
+            {
+                //TODO: link to a page when registration success
+            }
         }
 
         #endregion

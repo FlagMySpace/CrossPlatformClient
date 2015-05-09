@@ -188,7 +188,16 @@ namespace FlagMySpace.Portable.LocalizationResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to register.
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        public static string RegisterPageLocalization_RegisterInformation_Information {
+            get {
+                return ResourceManager.GetString("RegisterPageLocalization_RegisterInformation_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string RegisterPageLocalization_TextRegister_register {
             get {

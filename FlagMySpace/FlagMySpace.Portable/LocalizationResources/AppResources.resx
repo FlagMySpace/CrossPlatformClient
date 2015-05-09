@@ -168,12 +168,15 @@
     <value>email</value>
   </data>
   <data name="RegisterPageLocalization_TextRegister_register" xml:space="preserve">
-    <value>register</value>
+    <value>Register</value>
   </data>
   <data name="RegisterPageLocalization_PlaceholderConfirmPassword_confirm_password" xml:space="preserve">
     <value>confirm password</value>
   </data>
   <data name="RegisterPageLocalization_PlaceholderUsername_username" xml:space="preserve">
     <value>username</value>
+  </data>
+  <data name="RegisterPageLocalization_RegisterInformation_Information" xml:space="preserve">
+    <value>Information</value>
   </data>
 </root>
