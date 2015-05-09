@@ -104,4 +104,7 @@
   <data name="PasswordValidatorUtility_ValidatePassword_Password_mismatch" xml:space="preserve">
     <value>Password mismatch</value>
   </data>
+  <data name="EmailValidatorUtility_ValidateEmail_Timeout_when_trying_to_validate_email_address" xml:space="preserve">
+    <value>Timeout when trying to validate email address</value>
+  </data>
 </root>

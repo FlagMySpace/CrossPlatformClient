@@ -4,11 +4,6 @@ namespace FlagMySpace.Agnostic.Login
 {
     public class MockLoginService : ILoginService
     {
-        public Task<bool> Login()
-        {
-            return Task.FromResult(true);
-        }
-
         public bool IsLoggedIn { get; set; }
 
         public Task<bool> LoginAsync()

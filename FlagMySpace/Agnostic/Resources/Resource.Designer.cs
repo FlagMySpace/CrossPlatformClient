@@ -71,6 +71,16 @@ namespace FlagMySpace.Agnostic.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Timeout when trying to validate email address.
+        /// </summary>
+        internal static string EmailValidatorUtility_ValidateEmail_Timeout_when_trying_to_validate_email_address {
+            get {
+                return ResourceManager.GetString("EmailValidatorUtility_ValidateEmail_Timeout_when_trying_to_validate_email_address" +
+                        "", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password mismatch.
         /// </summary>
         internal static string PasswordValidatorUtility_ValidatePassword_Password_mismatch {

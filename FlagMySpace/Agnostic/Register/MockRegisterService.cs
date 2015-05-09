@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using FlagMySpace.Agnostic.Utilities;
 
@@ -17,6 +18,7 @@ namespace FlagMySpace.Agnostic.Register
             _emailValidatorUtility = emailValidatorUtility;
         }
 
+        /// <exception cref="RegexMatchTimeoutException">Timeout when trying to validate email address</exception>
         public Task<bool> RegisterAsync(string username, string password, string confirmPassword, string email)
         {
             _usernameValidatorUtility.ValidateUsername(username);
