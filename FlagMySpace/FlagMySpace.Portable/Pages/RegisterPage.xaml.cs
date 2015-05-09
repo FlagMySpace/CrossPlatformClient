@@ -2,7 +2,7 @@
 
 namespace FlagMySpace.Portable.Pages
 {
-    public partial class RegisterPage : ContentPage
+    public partial class RegisterPage : ContentPage, IRegisterPage
     {
         public RegisterPage()
         {

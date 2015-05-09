@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FlagMySpace.Portable.Pages;
 using Ninject;
 using SimpleInjector;
 using Xamarin.Forms;
@@ -65,37 +66,39 @@ namespace FlagMySpace.Portable.ViewFactory
 
         public void Set<TViewModel, TView>()
             where TViewModel : class, IViewModel
-            where TView : Page
+            where TView : IView
         {
             _map[typeof(TViewModel)] = typeof(TView);
         }
 
-        public Page Get<TViewModel>() where TViewModel : class, IViewModel
+        public IView Get<TViewModel>() where TViewModel : class, IViewModel
         {
             TViewModel viewModel;
             return Get<TViewModel>(out viewModel);
         }
 
-        public Page Get<TViewModel>(out TViewModel viewModel)
+        public IView Get<TViewModel>(out TViewModel viewModel)
             where TViewModel : class, IViewModel
         {
             viewModel = _provider.Get<TViewModel>();
 
             var viewType = _map[typeof(TViewModel)];
-            var view = (Page)_provider.Get(viewType);
-            
-            viewModel.Navigation = new ViewModelNavigation(view.Navigation);
+            var view = (IView)_provider.Get(viewType);
+
+            var page = view as Page;
+            if (page != null) viewModel.Navigation = new ViewModelNavigation(page.Navigation);
             view.BindingContext = viewModel;
             return view;
         }
 
-        public Page Get<TViewModel>(TViewModel viewModel)
+        public IView Get<TViewModel>(TViewModel viewModel)
             where TViewModel : class, IViewModel
         {
             var viewType = _map[typeof(TViewModel)];
-            var view = (Page)_provider.Get(viewType);
-            
-            viewModel.Navigation = new ViewModelNavigation(view.Navigation);
+            var view = (IView)_provider.Get(viewType);
+
+            var page = view as Page;
+            if (page != null) viewModel.Navigation = new ViewModelNavigation(page.Navigation);
             view.BindingContext = viewModel;
             return view;
         }

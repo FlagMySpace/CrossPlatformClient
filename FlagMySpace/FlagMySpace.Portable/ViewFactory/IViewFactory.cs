@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using FlagMySpace.Portable.Pages;
+using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.Portable.ViewFactory
@@ -7,15 +8,15 @@ namespace FlagMySpace.Portable.ViewFactory
     {
         void Set<TViewModel, TView>()
             where TViewModel : class, IViewModel
-            where TView : Page;
+            where TView : IView;
 
-        Page Get<TViewModel>()
+        IView Get<TViewModel>()
             where TViewModel : class, IViewModel;
 
-        Page Get<TViewModel>(out TViewModel viewModel)
+        IView Get<TViewModel>(out TViewModel viewModel)
             where TViewModel : class, IViewModel;
 
-        Page Get<TViewModel>(TViewModel viewModel)
+        IView Get<TViewModel>(TViewModel viewModel)
             where TViewModel : class, IViewModel;
     }
 }

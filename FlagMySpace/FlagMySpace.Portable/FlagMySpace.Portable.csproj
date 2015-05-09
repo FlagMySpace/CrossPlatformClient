@@ -54,6 +54,9 @@
     <Compile Include="Localization\LoginPageLocalizationProvider.cs" />
     <Compile Include="NinjectModules\FlagMySpaceModule.cs" />
     <Compile Include="NinjectModules\MockProviderModule.cs" />
+    <Compile Include="Pages\ILoginPage.cs" />
+    <Compile Include="Pages\IRegisterPage.cs" />
+    <Compile Include="Pages\IView.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>

@@ -2,12 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FlagMySpace.Portable.Pages.RegisterPage"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:FlagMySpace.Portable.ViewModels;assembly=FlagMySpace.Portable"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance viewModels:IRegisterPageViewModel}"
              Title="{Binding Title}">
   <StackLayout>
-    <Entry x:Name="EntryUsername" Text="{Binding Username}" Placeholder="username"></Entry>
-    <Entry x:Name="EntryPassword" Text="{Binding Password}" Placeholder="password" IsPassword="True"></Entry>
-    <Entry x:Name="EntryConfirmPassword" Placeholder="confirm password" IsPassword="True"></Entry>
-    <Entry x:Name="EntryEmail" Placeholder="email"></Entry>
-    <Button Text="register"></Button>
+    <Entry Text="{Binding TextUsername}" Placeholder="{Binding PlaceholderUsername}"></Entry>
+    <Entry Text="{Binding TextPassword}" Placeholder="{Binding PlaceholderPassword}" IsPassword="True"></Entry>
+    <Entry Placeholder="{Binding PlaceholderConfirmPassword}" IsPassword="True"></Entry>
+    <Entry Placeholder="{Binding PlaceholderEmail}"></Entry>
+    <Button Text="{Binding TextRegister}"></Button>
   </StackLayout>
 </ContentPage>

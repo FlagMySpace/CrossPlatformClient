@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:FlagMySpace.Portable.ViewModels;assembly=FlagMySpace.Portable"
              mc:Ignorable="d"
-             d:DataContext="{d:DesignInstance viewModels:LoginPageViewModel}"
+             d:DataContext="{d:DesignInstance viewModels:ILoginPageViewModel}"
              Title="{Binding Title}">
   <StackLayout>
     <Entry Text="{Binding Username}" Placeholder="{Binding UsernamePlaceholder}"></Entry>

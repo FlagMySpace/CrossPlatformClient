@@ -1,15 +1,15 @@
-﻿using FlagMySpace.Portable.ViewFactory;
+﻿using System.Threading.Tasks;
+using FlagMySpace.Agnostic.EventAggregator;
+using FlagMySpace.Portable.ViewModels;
 using Xamarin.Forms;
+using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.Portable.Pages
 {
-    public partial class LoginPage : ContentPage
+    public partial class LoginPage : ContentPage, ILoginPage
     {
-        private readonly IViewFactory _viewFactory;
-
-        public LoginPage(IViewFactory viewFactory)
+        public LoginPage()
         {
-            _viewFactory = viewFactory;
             InitializeComponent();
         }
     }

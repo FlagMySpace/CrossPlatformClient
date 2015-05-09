@@ -1,4 +1,7 @@
-﻿using Acr.UserDialogs;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
+using Acr.UserDialogs;
+using FlagMySpace.Agnostic.EventAggregator;
 using FlagMySpace.Agnostic.Login;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.ViewFactory;
@@ -10,10 +13,11 @@ namespace FlagMySpace.Portable.ViewModels
     public class LoginPageViewModel : ViewModel, ILoginPageViewModel
     {
         private readonly IUserDialogs _dialogs;
+        private readonly IEventAggregator _eventAggregator;
         private readonly ILoginPageLocalizationProvider _localizationProvider;
         private readonly ILoginProvider _loginProvider;
         private readonly IViewFactory _viewFactory;
-        private Command _loginCommand;
+        private ICommand _loginCommand;
         private string _mButtonLoginText;
         private string _mPasswordPlaceholder;
         private string _mUsernamePlaceholder;
@@ -21,13 +25,18 @@ namespace FlagMySpace.Portable.ViewModels
         private string _title;
         private string _username;
 
-        public LoginPageViewModel(IViewFactory viewFactory, ILoginProvider loginProvider,
-            ILoginPageLocalizationProvider localizationProvider, IUserDialogs dialogs)
+        public LoginPageViewModel(
+            IViewFactory viewFactory, 
+            ILoginProvider loginProvider,
+            ILoginPageLocalizationProvider localizationProvider, 
+            IUserDialogs dialogs,
+            IEventAggregator eventAggregator)
         {
             _viewFactory = viewFactory;
             _loginProvider = loginProvider;
             _localizationProvider = localizationProvider;
             _dialogs = dialogs;
+            _eventAggregator = eventAggregator;
         }
 
         public string Title
@@ -48,9 +57,9 @@ namespace FlagMySpace.Portable.ViewModels
             set { SetProperty(ref _password, value); }
         }
 
-        public Command LoginCommand
+        public ICommand LoginCommand
         {
-            get { return _loginCommand ?? (_loginCommand = new Command(Login)); }
+            get { return _loginCommand ?? (_loginCommand = new Command(async () => await Login())); }
         }
 
         public string UsernamePlaceholder
@@ -83,7 +92,7 @@ namespace FlagMySpace.Portable.ViewModels
             set { SetProperty(ref _mButtonLoginText, value); }
         }
 
-        private async void Login()
+        private async Task Login()
         {
             if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
             {

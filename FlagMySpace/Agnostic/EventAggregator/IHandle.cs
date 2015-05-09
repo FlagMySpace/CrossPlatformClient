@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace FlagMySpace.Agnostic.EventAggregator
 {
     /// <summary>
@@ -11,7 +13,7 @@ namespace FlagMySpace.Agnostic.EventAggregator
         ///     Handles the message.
         /// </summary>
         /// <param name="message">The message.</param>
-        void Handle(TMessage message);
+        Task Handle(TMessage message);
     }
 
     /// <summary>
