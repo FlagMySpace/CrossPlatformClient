@@ -49,9 +49,23 @@
     <Compile Include="Error\IErrorService.cs" />
     <Compile Include="Register\IRegisterService.cs" />
     <Compile Include="Register\MockRegisterService.cs" />
-    <Compile Include="Register\ResultModel.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\EmailValidatorUtility.cs" />
+    <Compile Include="Utilities\IUsernameValidatorUtility.cs" />
+    <Compile Include="Utilities\PasswordValidatorUtility.cs" />
+    <Compile Include="Utilities\MockUsernameValidatorUtility.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

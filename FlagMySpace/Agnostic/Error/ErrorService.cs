@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using FlagMySpace.Agnostic.EventAggregator;
 
 namespace FlagMySpace.Agnostic.Error
@@ -13,7 +14,7 @@ namespace FlagMySpace.Agnostic.Error
             _eventAggregator = eventAggregator;
         }
 
-        public async void CaptureError(Exception exception)
+        public Task CaptureErrorAsync(Exception exception)
         {
             _capturedException = exception;
 
@@ -22,6 +23,8 @@ namespace FlagMySpace.Agnostic.Error
                 _eventAggregator.Publish(_capturedException);
                 _capturedException = null;
             }
+
+            return Task.FromResult<object>(null);
         }
     }
 }

@@ -43,5 +43,20 @@ namespace FlagMySpace.Portable.Localization
         {
             get { return AppResources.Ok; }
         }
+
+        public string RegisterSuccessTitle
+        {
+            get { return AppResources.RegisterPageLocalization_RegisterSuccessTitle_Registration_successful; }
+        }
+
+        public string RegisterSuccessMessage
+        {
+            get { return AppResources.RegisterPageLocalization_RegisterSuccessMessage_Thank_you_for_registering_with_us_; }
+        }
+
+        public string Error
+        {
+            get { return AppResources.RegisterPageLocalization_Error_Error; }
+        }
     }
 }

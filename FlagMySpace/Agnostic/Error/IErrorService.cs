@@ -1,9 +1,10 @@
 using System;
+using System.Threading.Tasks;
 
 namespace FlagMySpace.Agnostic.Error
 {
     public interface IErrorService
     {
-        void CaptureError(Exception exception);
+        Task CaptureErrorAsync(Exception exception);
     }
 }

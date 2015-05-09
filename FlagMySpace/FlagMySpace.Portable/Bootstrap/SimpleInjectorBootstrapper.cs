@@ -3,6 +3,8 @@ using FlagMySpace.Agnostic.Error;
 using FlagMySpace.Agnostic.EventAggregator;
 using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Agnostic.Login;
+using FlagMySpace.Agnostic.Register;
+using FlagMySpace.Agnostic.Utilities;
 using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.Pages;
@@ -37,8 +39,12 @@ namespace FlagMySpace.Portable.Bootstrap
             container.Register<IRegisterPageViewModel, RegisterPageViewModel>();
             // Login
             container.Register<ILoginService, MockLoginService>();
+            // Register
+            container.Register<IRegisterService, MockRegisterService>();
             // Error
             container.Register<IErrorService, ErrorService>();
+            // Utility
+            container.Register<IUsernameValidatorUtility, MockUsernameValidatorUtility>();
 
 #if DEBUG
             container.Verify();

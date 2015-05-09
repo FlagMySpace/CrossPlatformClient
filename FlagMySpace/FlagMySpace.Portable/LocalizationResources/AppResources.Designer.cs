@@ -170,6 +170,15 @@ namespace FlagMySpace.Portable.LocalizationResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string RegisterPageLocalization_Error_Error {
+            get {
+                return ResourceManager.GetString("RegisterPageLocalization_Error_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to confirm password.
         /// </summary>
         public static string RegisterPageLocalization_PlaceholderConfirmPassword_confirm_password {
@@ -193,6 +202,25 @@ namespace FlagMySpace.Portable.LocalizationResources {
         public static string RegisterPageLocalization_RegisterInformation_Information {
             get {
                 return ResourceManager.GetString("RegisterPageLocalization_RegisterInformation_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for registering with us..
+        /// </summary>
+        public static string RegisterPageLocalization_RegisterSuccessMessage_Thank_you_for_registering_with_us_ {
+            get {
+                return ResourceManager.GetString("RegisterPageLocalization_RegisterSuccessMessage_Thank_you_for_registering_with_us" +
+                        "_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration successful.
+        /// </summary>
+        public static string RegisterPageLocalization_RegisterSuccessTitle_Registration_successful {
+            get {
+                return ResourceManager.GetString("RegisterPageLocalization_RegisterSuccessTitle_Registration_successful", resourceCulture);
             }
         }
         

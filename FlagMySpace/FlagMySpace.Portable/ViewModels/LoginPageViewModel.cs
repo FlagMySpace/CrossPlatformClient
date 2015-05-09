@@ -44,11 +44,11 @@ namespace FlagMySpace.Portable.ViewModels
             if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
             {
                 var result = await _loginProvider.LoginAsync();
-                if (!result.Status)
+                if (!result)
                 {
                     await
                         _dialogs.AlertAsync(
-                            result.Message,
+                            _localizationProvider.LoginFailedMessage,
                             _localizationProvider.LoginFailedTitle,
                             _localizationProvider.LoginFailedCancel);
                 }

@@ -8,6 +8,6 @@ namespace FlagMySpace.Agnostic.Register
 {
     public interface IRegisterService
     {
-        Task<ResultModel> RegisterAsync(string username, string password, string email);
+        Task<bool> RegisterAsync(string username, string password, string confrimPassword, string email);
     }
 }

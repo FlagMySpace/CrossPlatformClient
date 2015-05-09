@@ -179,4 +179,13 @@
   <data name="RegisterPageLocalization_RegisterInformation_Information" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="RegisterPageLocalization_RegisterSuccessTitle_Registration_successful" xml:space="preserve">
+    <value>Registration successful</value>
+  </data>
+  <data name="RegisterPageLocalization_RegisterSuccessMessage_Thank_you_for_registering_with_us_" xml:space="preserve">
+    <value>Thank you for registering with us.</value>
+  </data>
+  <data name="RegisterPageLocalization_Error_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
 </root>

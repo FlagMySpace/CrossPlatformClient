@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Runtime.ExceptionServices;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using FlagMySpace.Agnostic.Register;
@@ -71,13 +73,26 @@ namespace FlagMySpace.Portable.ViewModels
 
         private async Task Register()
         {
-            var result = await _registerService.RegisterAsync(Username, Password, Email);
-            await
-                _userDialogs.AlertAsync(result.Message, _localization.RegisterInformation,
-                    _localization.Ok);
-            if (result.Status)
+            Exception exception = null;
+            try
             {
-                //TODO: link to a page when registration success
+                var result = await _registerService.RegisterAsync(Username, Password, ConfirmPassword, Email);
+                if (result)
+                {
+                    await
+                        _userDialogs.AlertAsync(_localization.RegisterSuccessMessage, _localization.RegisterSuccessTitle,
+                            _localization.Ok);
+                    //TODO: link to a page when registration success
+                }
+            }
+            catch (Exception ex)
+            {
+                exception = ex;
+            }
+
+            if (exception != null)
+            {
+                await _userDialogs.AlertAsync(exception.Message, _localization.Error, _localization.Ok);
             }
         }
 
