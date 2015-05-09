@@ -9,10 +9,10 @@
              d:DataContext="{d:DesignInstance viewModels:IRegisterPageViewModel}"
              Title="{Binding Title}">
   <StackLayout>
-    <Entry Text="{Binding TextUsername}" Placeholder="{Binding PlaceholderUsername}"></Entry>
-    <Entry Text="{Binding TextPassword}" Placeholder="{Binding PlaceholderPassword}" IsPassword="True"></Entry>
-    <Entry Placeholder="{Binding PlaceholderConfirmPassword}" IsPassword="True"></Entry>
-    <Entry Placeholder="{Binding PlaceholderEmail}"></Entry>
+    <Entry Text="{Binding Username}" Placeholder="{Binding PlaceholderUsername}"></Entry>
+    <Entry Text="{Binding Password}" Placeholder="{Binding PlaceholderPassword}" IsPassword="True"></Entry>
+    <Entry Text="{Binding ConfirmPassword}" Placeholder="{Binding PlaceholderConfirmPassword}" IsPassword="True"></Entry>
+    <Entry Text="{Binding Email}" Placeholder="{Binding PlaceholderEmail}"></Entry>
     <Button Text="{Binding TextRegister}"></Button>
   </StackLayout>
 </ContentPage>

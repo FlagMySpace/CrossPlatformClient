@@ -161,4 +161,19 @@
   <data name="LoginPageErrorLoginEmpty" xml:space="preserve">
     <value>Please write down your username and password</value>
   </data>
+  <data name="RegisterPageTitle" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="RegisterPageLocalization_TextRegister_register" xml:space="preserve">
+    <value>register</value>
+  </data>
+  <data name="RegisterPageLocalization_PlaceholderConfirmPassword_confirm_password" xml:space="preserve">
+    <value>confirm password</value>
+  </data>
+  <data name="RegisterPageLocalization_PlaceholderUsername_username" xml:space="preserve">
+    <value>username</value>
+  </data>
 </root>

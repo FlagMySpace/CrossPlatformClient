@@ -1,64 +1,103 @@
-﻿using XLabs.Forms.Mvvm;
+﻿using FlagMySpace.Portable.Localization;
+using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.Portable.ViewModels
 {
     public class RegisterPageViewModel : ViewModel, IRegisterPageViewModel
     {
-        private string _title;
-        private string _username;
-        private string _password;
-        private string _placeholderUsername;
-        private string _placeholderPassword;
-        private string _placeholderConfirmPassword;
-        private string _placeholderEmail;
-        private string _textRegister;
+        private readonly IRegisterPageLocalization _localization;
+
+        public RegisterPageViewModel(IRegisterPageLocalization localization)
+        {
+            _localization = localization;
+        }
+
+        #region PropertyBinding
+
+        private string _mTitle;
 
         public string Title
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            get { return _mTitle = _localization.Title; }
+            set { SetProperty(ref _mTitle, value); }
         }
 
-        public string TextUsername
+        private string _mUsername;
+
+        public string Username
         {
-            get { return _username; }
-            set { SetProperty(ref _username, value); }
+            get { return _mUsername; }
+            set { SetProperty(ref _mUsername, value); }
         }
 
-        public string TextPassword
+        private string _mPassword;
+
+        public string Password
         {
-            get { return _password; }
-            set { SetProperty(ref _password, value); }
+            get { return _mPassword; }
+            set { SetProperty(ref _mPassword, value); }
         }
+
+        private string _mConfirmPassword;
+
+        public string ConfirmPassword
+        {
+            get { return _mConfirmPassword; }
+            set { SetProperty(ref _mConfirmPassword, value); }
+        }
+
+        private string _mEmail;
+
+        public string Email
+        {
+            get { return _mEmail; }
+            set { SetProperty(ref _mEmail, value); }
+        }
+
+        #endregion
+
+        #region Localizations
+
+        private string _mPlaceholderUsername;
 
         public string PlaceholderUsername
         {
-            get { return _placeholderUsername; }
-            set { SetProperty(ref _placeholderUsername, value); }
+            get { return _mPlaceholderUsername = _localization.PlaceholderUsername; }
+            set { SetProperty(ref _mPlaceholderUsername, value); }
         }
+
+        private string _mPlaceholderPassword;
 
         public string PlaceholderPassword
         {
-            get { return _placeholderPassword; }
-            set { SetProperty(ref _placeholderPassword, value); }
+            get { return _mPlaceholderPassword = _localization.PlaceholderPassword; }
+            set { SetProperty(ref _mPlaceholderPassword, value); }
         }
+
+        private string _mPlaceholderConfirmPassword;
 
         public string PlaceholderConfirmPassword
         {
-            get { return _placeholderConfirmPassword; }
-            set { SetProperty(ref _placeholderConfirmPassword, value); }
+            get { return _mPlaceholderConfirmPassword = _localization.PlaceholderConfirmPassword; }
+            set { SetProperty(ref _mPlaceholderConfirmPassword, value); }
         }
+
+        private string _mPlaceholderEmail;
 
         public string PlaceholderEmail
         {
-            get { return _placeholderEmail; }
-            set { SetProperty(ref _placeholderEmail, value); }
+            get { return _mPlaceholderEmail = _localization.PlaceholderEmail; }
+            set { SetProperty(ref _mPlaceholderEmail, value); }
         }
+
+        private string _mTextRegister;
 
         public string TextRegister
         {
-            get { return _textRegister; }
-            set { SetProperty(ref _textRegister, value); }
+            get { return _mTextRegister = _localization.TextRegister; }
+            set { SetProperty(ref _mTextRegister, value); }
         }
+
+        #endregion
     }
 }

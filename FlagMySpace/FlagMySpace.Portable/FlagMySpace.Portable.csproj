@@ -51,7 +51,9 @@
     </Compile>
     <Compile Include="Localization\ILocalize.cs" />
     <Compile Include="Localization\ILoginPageLocalizationProvider.cs" />
+    <Compile Include="Localization\IRegisterPageLocalization.cs" />
     <Compile Include="Localization\LoginPageLocalizationProvider.cs" />
+    <Compile Include="Localization\RegisterPageLocalization.cs" />
     <Compile Include="NinjectModules\FlagMySpaceModule.cs" />
     <Compile Include="NinjectModules\MockProviderModule.cs" />
     <Compile Include="Pages\ILoginPage.cs" />

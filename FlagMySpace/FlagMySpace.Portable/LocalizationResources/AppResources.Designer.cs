@@ -89,6 +89,15 @@ namespace FlagMySpace.Portable.LocalizationResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please check your username and password.
         /// </summary>
         public static string LoginFailedMessage {
@@ -157,6 +166,42 @@ namespace FlagMySpace.Portable.LocalizationResources {
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to confirm password.
+        /// </summary>
+        public static string RegisterPageLocalization_PlaceholderConfirmPassword_confirm_password {
+            get {
+                return ResourceManager.GetString("RegisterPageLocalization_PlaceholderConfirmPassword_confirm_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to username.
+        /// </summary>
+        public static string RegisterPageLocalization_PlaceholderUsername_username {
+            get {
+                return ResourceManager.GetString("RegisterPageLocalization_PlaceholderUsername_username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to register.
+        /// </summary>
+        public static string RegisterPageLocalization_TextRegister_register {
+            get {
+                return ResourceManager.GetString("RegisterPageLocalization_TextRegister_register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string RegisterPageTitle {
+            get {
+                return ResourceManager.GetString("RegisterPageTitle", resourceCulture);
             }
         }
         

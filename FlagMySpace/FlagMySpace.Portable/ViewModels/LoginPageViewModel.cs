@@ -26,9 +26,9 @@ namespace FlagMySpace.Portable.ViewModels
         private string _username;
 
         public LoginPageViewModel(
-            IViewFactory viewFactory, 
+            IViewFactory viewFactory,
             ILoginProvider loginProvider,
-            ILoginPageLocalizationProvider localizationProvider, 
+            ILoginPageLocalizationProvider localizationProvider,
             IUserDialogs dialogs,
             IEventAggregator eventAggregator)
         {
@@ -39,11 +39,31 @@ namespace FlagMySpace.Portable.ViewModels
             _eventAggregator = eventAggregator;
         }
 
-        public string Title
+        private async Task Login()
         {
-            get { return _title = _localizationProvider.TitleText; }
-            set { SetProperty(ref _title, value); }
+            if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
+            {
+                var doLogin = await _loginProvider.LoginAsync();
+                if (!doLogin)
+                {
+                    await
+                        _dialogs.AlertAsync(
+                            _localizationProvider.LoginFailedMessage,
+                            _localizationProvider.LoginFailedTitle,
+                            _localizationProvider.LoginFailedCancel);
+                }
+            }
+            else
+            {
+                await
+                    _dialogs.AlertAsync(
+                        _localizationProvider.ErrorLoginEmpty,
+                        _localizationProvider.LoginFailedTitle,
+                        _localizationProvider.LoginFailedCancel);
+            }
         }
+
+        #region Property
 
         public string Username
         {
@@ -55,6 +75,16 @@ namespace FlagMySpace.Portable.ViewModels
         {
             get { return _password; }
             set { SetProperty(ref _password, value); }
+        }
+
+        #endregion
+
+        #region Bindings
+
+        public string Title
+        {
+            get { return _title = _localizationProvider.TitleText; }
+            set { SetProperty(ref _title, value); }
         }
 
         public ICommand LoginCommand
@@ -92,28 +122,6 @@ namespace FlagMySpace.Portable.ViewModels
             set { SetProperty(ref _mButtonLoginText, value); }
         }
 
-        private async Task Login()
-        {
-            if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
-            {
-                var doLogin = await _loginProvider.LoginAsync();
-                if (!doLogin)
-                {
-                    await
-                        _dialogs.AlertAsync(
-                            _localizationProvider.LoginFailedMessage,
-                            _localizationProvider.LoginFailedTitle,
-                            _localizationProvider.LoginFailedCancel);
-                }
-            }
-            else
-            {
-                await
-                    _dialogs.AlertAsync(
-                        _localizationProvider.ErrorLoginEmpty,
-                        _localizationProvider.LoginFailedTitle,
-                        _localizationProvider.LoginFailedCancel);
-            }
-        }
+        #endregion
     }
 }
