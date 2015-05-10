@@ -2,9 +2,9 @@
 using System.Text.RegularExpressions;
 using FlagMySpace.Agnostic.Resources;
 
-namespace FlagMySpace.Agnostic.Register
+namespace FlagMySpace.Agnostic.Utilities.EmailValidatorUtility
 {
-    public class EmailValidatorUtility
+    public class EmailValidatorUtility : IEmailValidatorUtility
     {
         /// <exception cref="FormatException">Invalid email address format.</exception>
         /// <exception cref="RegexMatchTimeoutException">Timeout when trying to validate email address</exception>

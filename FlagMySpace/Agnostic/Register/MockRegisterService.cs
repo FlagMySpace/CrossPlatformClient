@@ -1,16 +1,22 @@
 using System;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using FlagMySpace.Agnostic.Utilities.EmailValidatorUtility;
+using FlagMySpace.Agnostic.Utilities.PasswordValidatorUtility;
+using FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility;
 
 namespace FlagMySpace.Agnostic.Register
 {
     public class MockRegisterService : IRegisterService
     {
         private readonly IUsernameValidatorUtility _usernameValidatorUtility;
-        private readonly PasswordValidatorUtility _passwordValidatorUtility;
-        private readonly EmailValidatorUtility _emailValidatorUtility;
+        private readonly IPasswordValidatorUtility _passwordValidatorUtility;
+        private readonly IEmailValidatorUtility _emailValidatorUtility;
 
-        public MockRegisterService(IUsernameValidatorUtility usernameValidatorUtility, PasswordValidatorUtility passwordValidatorUtility, EmailValidatorUtility emailValidatorUtility)
+        public MockRegisterService(
+            IUsernameValidatorUtility usernameValidatorUtility, 
+            IPasswordValidatorUtility passwordValidatorUtility, 
+            IEmailValidatorUtility emailValidatorUtility)
         {
             _usernameValidatorUtility = usernameValidatorUtility;
             _passwordValidatorUtility = passwordValidatorUtility;

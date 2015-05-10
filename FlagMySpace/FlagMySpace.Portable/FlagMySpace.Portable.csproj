@@ -46,34 +46,34 @@
     <Compile Include="Bootstrap\SimpleInjectorBootstrapper.cs" />
     <Compile Include="IoC\IoCNinject.cs" />
     <Compile Include="IoC\IoCSimpleContainer.cs" />
-    <Compile Include="LocalizationResources\AppResources.Designer.cs">
+    <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Localization\ILocalize.cs" />
-    <Compile Include="Localization\ILoginPageLocalizationProvider.cs" />
+    <Compile Include="Localization\LoginPageLocalization\ILoginPageLocalization.cs" />
     <Compile Include="Localization\IRegisterPageLocalization.cs" />
-    <Compile Include="Localization\LoginPageLocalizationProvider.cs" />
+    <Compile Include="Localization\LoginPageLocalization\LoginPageLocalization.cs" />
     <Compile Include="Localization\RegisterPageLocalization.cs" />
     <Compile Include="NinjectModules\FlagMySpaceModule.cs" />
     <Compile Include="NinjectModules\MockProviderModule.cs" />
-    <Compile Include="Pages\ILoginPage.cs" />
-    <Compile Include="Pages\IRegisterPage.cs" />
+    <Compile Include="Pages\LoginPage\ILoginPage.cs" />
+    <Compile Include="Pages\RegisterPage\IRegisterPage.cs" />
     <Compile Include="Pages\IView.cs" />
-    <Compile Include="Pages\LoginPage.xaml.cs">
+    <Compile Include="Pages\LoginPage\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegisterPage.xaml.cs">
+    <Compile Include="Pages\RegisterPage\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewFactory\IViewFactory.cs" />
     <Compile Include="ViewFactory\ViewFactory.cs" />
-    <Compile Include="ViewModels\ILoginPageViewModel.cs" />
-    <Compile Include="ViewModels\IRegisterPageViewModel.cs" />
-    <Compile Include="ViewModels\LoginPageViewModel.cs" />
-    <Compile Include="ViewModels\RegisterPageViewModel.cs" />
+    <Compile Include="ViewModels\LoginPageViewModel\ILoginPageViewModel.cs" />
+    <Compile Include="ViewModels\RegisterPageViewModel\IRegisterPageViewModel.cs" />
+    <Compile Include="ViewModels\LoginPageViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\RegisterPageViewModel\RegisterPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Acr.UserDialogs">
@@ -126,20 +126,20 @@
       <SubType>
       </SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalizationResources\AppResources.resx">
+    <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\LoginPage.xaml">
+    <EmbeddedResource Include="Pages\LoginPage\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>
       </SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\RegisterPage.xaml">
+    <EmbeddedResource Include="Pages\RegisterPage\RegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>
       </SubType>

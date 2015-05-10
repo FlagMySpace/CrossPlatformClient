@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FlagMySpace.Portable.LocalizationResources {
+namespace FlagMySpace.Portable.Resources {
     using System;
     using System.Reflection;
     
@@ -40,7 +40,7 @@ namespace FlagMySpace.Portable.LocalizationResources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FlagMySpace.Portable.LocalizationResources.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FlagMySpace.Portable.Resources.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

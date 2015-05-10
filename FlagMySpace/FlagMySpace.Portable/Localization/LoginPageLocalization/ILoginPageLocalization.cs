@@ -1,6 +1,6 @@
-﻿namespace FlagMySpace.Portable.Localization
+﻿namespace FlagMySpace.Portable.Localization.LoginPageLocalization
 {
-    public interface ILoginPageLocalizationProvider
+    public interface ILoginPageLocalization
     {
         string ButtonLoginText { get; }
         string UsernamePlaceholder { get; }

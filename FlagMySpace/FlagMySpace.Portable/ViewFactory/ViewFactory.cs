@@ -38,8 +38,7 @@ namespace FlagMySpace.Portable.ViewFactory
             var viewType = _map[typeof(TViewModel)];
             var view = (IView)_provider.Get(viewType);
 
-            var page = view as Page;
-            if (page != null) viewModel.Navigation = new ViewModelNavigation(page.Navigation);
+            viewModel.Navigation = new ViewModelNavigation(view.Navigation);
             view.BindingContext = viewModel;
             return view;
         }
@@ -50,8 +49,7 @@ namespace FlagMySpace.Portable.ViewFactory
             var viewType = _map[typeof(TViewModel)];
             var view = (IView)_provider.Get(viewType);
 
-            var page = view as Page;
-            if (page != null) viewModel.Navigation = new ViewModelNavigation(page.Navigation);
+            viewModel.Navigation = new ViewModelNavigation(view.Navigation);
             view.BindingContext = viewModel;
             return view;
         }

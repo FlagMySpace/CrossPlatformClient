@@ -7,7 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using FlagMySpace.Portable;
-using FlagMySpace.Portable.LocalizationResources;
+using FlagMySpace.Portable.Resources;
 
 namespace FlagMySpace.WinPhone
 {

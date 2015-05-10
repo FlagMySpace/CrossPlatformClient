@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 using XLabs.Forms.Mvvm;
 
-namespace FlagMySpace.Portable.ViewModels
+namespace FlagMySpace.Portable.ViewModels.LoginPageViewModel
 {
     public interface ILoginPageViewModel : IViewModel
     {

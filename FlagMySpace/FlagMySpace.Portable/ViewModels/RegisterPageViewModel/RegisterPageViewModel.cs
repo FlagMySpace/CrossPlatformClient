@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
@@ -8,7 +7,7 @@ using FlagMySpace.Portable.Localization;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
-namespace FlagMySpace.Portable.ViewModels
+namespace FlagMySpace.Portable.ViewModels.RegisterPageViewModel
 {
     public class RegisterPageViewModel : ViewModel, IRegisterPageViewModel
     {

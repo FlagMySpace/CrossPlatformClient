@@ -11,5 +11,6 @@ namespace FlagMySpace.Portable.Pages
     public interface IView
     {
         object BindingContext { get; set; }
+        INavigation Navigation { get; }
     }
 }

@@ -3,18 +3,18 @@ using System.Windows.Input;
 using Acr.UserDialogs;
 using FlagMySpace.Agnostic.EventAggregator;
 using FlagMySpace.Agnostic.Login;
-using FlagMySpace.Portable.Localization;
+using FlagMySpace.Portable.Localization.LoginPageLocalization;
 using FlagMySpace.Portable.ViewFactory;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
-namespace FlagMySpace.Portable.ViewModels
+namespace FlagMySpace.Portable.ViewModels.LoginPageViewModel
 {
     public class LoginPageViewModel : ViewModel, ILoginPageViewModel
     {
         private readonly IUserDialogs _dialogs;
         private readonly IEventAggregator _eventAggregator;
-        private readonly ILoginPageLocalizationProvider _localizationProvider;
+        private readonly ILoginPageLocalization _localizationProvider;
         private readonly ILoginService _loginProvider;
         private readonly IViewFactory _viewFactory;
         private ICommand _loginCommand;
@@ -28,7 +28,7 @@ namespace FlagMySpace.Portable.ViewModels
         public LoginPageViewModel(
             IViewFactory viewFactory,
             ILoginService loginProvider,
-            ILoginPageLocalizationProvider localizationProvider,
+            ILoginPageLocalization localizationProvider,
             IUserDialogs dialogs,
             IEventAggregator eventAggregator)
         {

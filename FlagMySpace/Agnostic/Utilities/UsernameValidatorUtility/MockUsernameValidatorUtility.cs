@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using FlagMySpace.Agnostic.Resources;
 
-namespace FlagMySpace.Agnostic.Register
+namespace FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility
 {
     public class MockUsernameValidatorUtility : IUsernameValidatorUtility
     {

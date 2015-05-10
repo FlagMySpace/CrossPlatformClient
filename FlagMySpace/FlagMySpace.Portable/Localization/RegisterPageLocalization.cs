@@ -1,4 +1,4 @@
-﻿using FlagMySpace.Portable.LocalizationResources;
+﻿using FlagMySpace.Portable.Resources;
 
 namespace FlagMySpace.Portable.Localization
 {

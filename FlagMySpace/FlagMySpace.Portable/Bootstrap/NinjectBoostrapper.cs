@@ -2,7 +2,7 @@
 using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
-using FlagMySpace.Portable.LocalizationResources;
+using FlagMySpace.Portable.Resources;
 using FlagMySpace.Portable.NinjectModules;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;

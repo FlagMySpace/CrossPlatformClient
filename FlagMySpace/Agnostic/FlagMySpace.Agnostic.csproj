@@ -47,6 +47,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Error\ErrorService.cs" />
     <Compile Include="Error\IErrorService.cs" />
+    <Compile Include="Utilities\EmailValidatorUtility\IEmailValidatorUtility.cs" />
+    <Compile Include="Utilities\PasswordValidatorUtility\IPasswordValidatorUtility.cs" />
     <Compile Include="Register\IRegisterService.cs" />
     <Compile Include="Register\MockRegisterService.cs" />
     <Compile Include="Resources\Resource.Designer.cs">
@@ -54,10 +56,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Register\EmailValidatorUtility.cs" />
-    <Compile Include="Register\IUsernameValidatorUtility.cs" />
-    <Compile Include="Register\PasswordValidatorUtility.cs" />
-    <Compile Include="Register\MockUsernameValidatorUtility.cs" />
+    <Compile Include="Utilities\EmailValidatorUtility\EmailValidatorUtility.cs" />
+    <Compile Include="Utilities\UsernameValidatorUtility\IUsernameValidatorUtility.cs" />
+    <Compile Include="Utilities\PasswordValidatorUtility\PasswordValidatorUtility.cs" />
+    <Compile Include="Utilities\UsernameValidatorUtility\MockUsernameValidatorUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Resource.resx">

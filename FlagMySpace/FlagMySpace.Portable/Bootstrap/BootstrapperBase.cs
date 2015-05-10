@@ -1,9 +1,13 @@
 using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Portable.Localization;
-using FlagMySpace.Portable.LocalizationResources;
+using FlagMySpace.Portable.Resources;
 using FlagMySpace.Portable.Pages;
+using FlagMySpace.Portable.Pages.LoginPage;
+using FlagMySpace.Portable.Pages.RegisterPage;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
+using FlagMySpace.Portable.ViewModels.LoginPageViewModel;
+using FlagMySpace.Portable.ViewModels.RegisterPageViewModel;
 using Xamarin.Forms;
 
 namespace FlagMySpace.Portable.Bootstrap

@@ -1,9 +1,9 @@
 ﻿using System;
 using FlagMySpace.Agnostic.Resources;
 
-namespace FlagMySpace.Agnostic.Register
+namespace FlagMySpace.Agnostic.Utilities.PasswordValidatorUtility
 {
-    public class PasswordValidatorUtility
+    public class PasswordValidatorUtility : IPasswordValidatorUtility
     {
         /// <exception cref="FormatException">Password mismatch or empty.</exception>
         public void ValidatePassword(string password, string confirmPassword)

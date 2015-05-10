@@ -4,11 +4,17 @@ using FlagMySpace.Agnostic.EventAggregator;
 using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Agnostic.Login;
 using FlagMySpace.Agnostic.Register;
+using FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility;
 using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
+using FlagMySpace.Portable.Localization.LoginPageLocalization;
 using FlagMySpace.Portable.Pages;
+using FlagMySpace.Portable.Pages.LoginPage;
+using FlagMySpace.Portable.Pages.RegisterPage;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
+using FlagMySpace.Portable.ViewModels.LoginPageViewModel;
+using FlagMySpace.Portable.ViewModels.RegisterPageViewModel;
 using SimpleInjector;
 using Xamarin.Forms;
 
@@ -26,7 +32,7 @@ namespace FlagMySpace.Portable.Bootstrap
             container.RegisterSingle<IViewFactory, ViewFactory.ViewFactory>();
             // Localization
             container.Register(() => DependencyService.Get<ILocalize>());
-            container.Register<ILoginPageLocalizationProvider, LoginPageLocalizationProvider>();
+            container.Register<ILoginPageLocalization, LoginPageLocalization>();
             container.Register<IRegisterPageLocalization, RegisterPageLocalization>();
             // User dialog
             container.RegisterSingle(() => UserDialogs.Instance);

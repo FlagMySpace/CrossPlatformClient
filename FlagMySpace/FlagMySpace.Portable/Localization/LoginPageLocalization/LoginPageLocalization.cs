@@ -1,8 +1,8 @@
-﻿using FlagMySpace.Portable.LocalizationResources;
+﻿using FlagMySpace.Portable.Resources;
 
-namespace FlagMySpace.Portable.Localization
+namespace FlagMySpace.Portable.Localization.LoginPageLocalization
 {
-    public class LoginPageLocalizationProvider : ILoginPageLocalizationProvider
+    public class LoginPageLocalization : ILoginPageLocalization
     {
         public string LoginFailedTitle
         {

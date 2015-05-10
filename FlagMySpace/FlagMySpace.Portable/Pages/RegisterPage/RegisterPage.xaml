@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FlagMySpace.Portable.Pages.RegisterPage"
+             x:Class="FlagMySpace.Portable.Pages.RegisterPage.RegisterPage"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:FlagMySpace.Portable.ViewModels;assembly=FlagMySpace.Portable"
+             xmlns:registerPageViewModel="clr-namespace:FlagMySpace.Portable.ViewModels.RegisterPageViewModel;assembly=FlagMySpace.Portable"
              mc:Ignorable="d"
-             d:DataContext="{d:DesignInstance viewModels:IRegisterPageViewModel}"
+             d:DataContext="{d:DesignInstance registerPageViewModel:IRegisterPageViewModel}"
              Title="{Binding Title}">
   <StackLayout>
     <Entry Text="{Binding Username}" Placeholder="{Binding PlaceholderUsername}"></Entry>
