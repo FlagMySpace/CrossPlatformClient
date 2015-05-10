@@ -8,6 +8,7 @@ using FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility;
 using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.Localization.LoginPageLocalization;
+using FlagMySpace.Portable.Localization.RegisterPageLocalization;
 using FlagMySpace.Portable.Pages;
 using FlagMySpace.Portable.Pages.LoginPage;
 using FlagMySpace.Portable.Pages.RegisterPage;

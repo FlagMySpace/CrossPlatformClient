@@ -1,6 +1,6 @@
 ﻿using FlagMySpace.Portable.Resources;
 
-namespace FlagMySpace.Portable.Localization
+namespace FlagMySpace.Portable.Localization.RegisterPageLocalization
 {
     public class RegisterPageLocalization : IRegisterPageLocalization
     {

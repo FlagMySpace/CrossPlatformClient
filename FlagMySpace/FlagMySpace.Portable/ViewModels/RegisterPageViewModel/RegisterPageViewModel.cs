@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Acr.UserDialogs;
 using FlagMySpace.Agnostic.Register;
 using FlagMySpace.Portable.Localization;
+using FlagMySpace.Portable.Localization.RegisterPageLocalization;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 

@@ -1,4 +1,4 @@
-namespace FlagMySpace.Portable.Localization
+namespace FlagMySpace.Portable.Localization.RegisterPageLocalization
 {
     public interface IRegisterPageLocalization
     {
