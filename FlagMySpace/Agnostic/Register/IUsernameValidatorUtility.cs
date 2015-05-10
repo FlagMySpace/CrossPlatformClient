@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace FlagMySpace.Agnostic.Utilities
+namespace FlagMySpace.Agnostic.Register
 {
     public interface IUsernameValidatorUtility
     {

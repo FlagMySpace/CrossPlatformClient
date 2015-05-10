@@ -71,6 +71,15 @@ namespace FlagMySpace.Agnostic.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email must not be empty.
+        /// </summary>
+        internal static string EmailValidatorUtility_ValidateEmail_Email_must_not_be_empty {
+            get {
+                return ResourceManager.GetString("EmailValidatorUtility_ValidateEmail_Email_must_not_be_empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Timeout when trying to validate email address.
         /// </summary>
         internal static string EmailValidatorUtility_ValidateEmail_Timeout_when_trying_to_validate_email_address {
@@ -81,11 +90,29 @@ namespace FlagMySpace.Agnostic.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Username must not be empty.
+        /// </summary>
+        internal static string MockUsernameValidatorUtility_ValidateUsername_Username_must_not_be_empty {
+            get {
+                return ResourceManager.GetString("MockUsernameValidatorUtility_ValidateUsername_Username_must_not_be_empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password mismatch.
         /// </summary>
         internal static string PasswordValidatorUtility_ValidatePassword_Password_mismatch {
             get {
                 return ResourceManager.GetString("PasswordValidatorUtility_ValidatePassword_Password_mismatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must not be empty.
+        /// </summary>
+        internal static string PasswordValidatorUtility_ValidatePassword_Password_must_not_be_empty {
+            get {
+                return ResourceManager.GetString("PasswordValidatorUtility_ValidatePassword_Password_must_not_be_empty", resourceCulture);
             }
         }
     }

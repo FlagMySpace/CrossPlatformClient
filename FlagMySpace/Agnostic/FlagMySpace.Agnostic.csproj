@@ -54,10 +54,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\EmailValidatorUtility.cs" />
-    <Compile Include="Utilities\IUsernameValidatorUtility.cs" />
-    <Compile Include="Utilities\PasswordValidatorUtility.cs" />
-    <Compile Include="Utilities\MockUsernameValidatorUtility.cs" />
+    <Compile Include="Register\EmailValidatorUtility.cs" />
+    <Compile Include="Register\IUsernameValidatorUtility.cs" />
+    <Compile Include="Register\PasswordValidatorUtility.cs" />
+    <Compile Include="Register\MockUsernameValidatorUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Resource.resx">

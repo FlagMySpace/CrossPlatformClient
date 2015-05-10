@@ -1,7 +1,6 @@
 using System;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using FlagMySpace.Agnostic.Utilities;
 
 namespace FlagMySpace.Agnostic.Register
 {

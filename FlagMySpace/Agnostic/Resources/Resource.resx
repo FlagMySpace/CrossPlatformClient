@@ -107,4 +107,13 @@
   <data name="EmailValidatorUtility_ValidateEmail_Timeout_when_trying_to_validate_email_address" xml:space="preserve">
     <value>Timeout when trying to validate email address</value>
   </data>
+  <data name="PasswordValidatorUtility_ValidatePassword_Password_must_not_be_empty" xml:space="preserve">
+    <value>Password must not be empty</value>
+  </data>
+  <data name="MockUsernameValidatorUtility_ValidateUsername_Username_must_not_be_empty" xml:space="preserve">
+    <value>Username must not be empty</value>
+  </data>
+  <data name="EmailValidatorUtility_ValidateEmail_Email_must_not_be_empty" xml:space="preserve">
+    <value>Email must not be empty</value>
+  </data>
 </root>

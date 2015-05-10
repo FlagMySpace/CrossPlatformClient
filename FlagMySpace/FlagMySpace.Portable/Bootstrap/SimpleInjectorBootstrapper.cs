@@ -4,7 +4,6 @@ using FlagMySpace.Agnostic.EventAggregator;
 using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Agnostic.Login;
 using FlagMySpace.Agnostic.Register;
-using FlagMySpace.Agnostic.Utilities;
 using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.Pages;

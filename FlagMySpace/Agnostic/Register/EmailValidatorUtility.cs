@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using FlagMySpace.Agnostic.Resources;
 
-namespace FlagMySpace.Agnostic.Utilities
+namespace FlagMySpace.Agnostic.Register
 {
     public class EmailValidatorUtility
     {
@@ -10,6 +10,11 @@ namespace FlagMySpace.Agnostic.Utilities
         /// <exception cref="RegexMatchTimeoutException">Timeout when trying to validate email address</exception>
         public void ValidateEmail(string email)
         {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                throw new FormatException(Resource.EmailValidatorUtility_ValidateEmail_Email_must_not_be_empty);    
+            }
+
             try
             {
                 var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
