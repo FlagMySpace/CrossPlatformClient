@@ -45,9 +45,8 @@
     <Compile Include="Repositories\PersonRepository\LocalPersonRepository.cs" />
     <Compile Include="Repositories\SpaceRepository\ISpaceRepository.cs" />
     <Compile Include="Repositories\SpaceRepository\LocalSpaceRepository.cs" />
-    <Compile Include="RepositoryServices\PersonRepositoryService\IPersonRepositoryService.cs" />
-    <Compile Include="RepositoryServices\SpaceRepositoryService\FreshSpaceRepositoryService.cs" />
-    <Compile Include="RepositoryServices\SpaceRepositoryService\ISpaceRepositoryService.cs" />
+    <Compile Include="Services\SpaceService\FreshSpaceService.cs" />
+    <Compile Include="Services\SpaceService\ISpaceService.cs" />
     <Compile Include="Services\LoginService\ILoginService.cs" />
     <Compile Include="Services\LoginService\MockLoginService.cs" />
     <Compile Include="Models\PersonModel\IPersonModel.cs" />

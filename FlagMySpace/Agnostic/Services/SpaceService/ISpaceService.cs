@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using FlagMySpace.Agnostic.Models.SpaceModel;
 
-namespace FlagMySpace.Agnostic.RepositoryServices.SpaceRepositoryService
+namespace FlagMySpace.Agnostic.Services.SpaceService
 {
-    public interface ISpaceRepositoryService
+    public interface ISpaceService
     {
         Task<ICollection<ISpaceModel>> GetSpaces();
     }

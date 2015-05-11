@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using FlagMySpace.Agnostic.Models.SpaceModel;
-using FlagMySpace.Agnostic.Repositories;
-using FlagMySpace.Agnostic.Repositories.SpaceRepository;
-using FlagMySpace.Agnostic.RepositoryServices.SpaceRepositoryService;
+using FlagMySpace.Agnostic.Services.SpaceService;
 using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.Portable.ViewModels.StreamPageViewModel
 {
-    public class StreamPageViewModel<T> : ViewModel, IStreamPageViewModel<T> where T : ISpaceRepositoryService
+    public class StreamPageViewModel<T> : ViewModel, IStreamPageViewModel<T> where T : ISpaceService
     {
         private readonly T _repository;
 

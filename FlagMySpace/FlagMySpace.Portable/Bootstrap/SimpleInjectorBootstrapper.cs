@@ -6,11 +6,10 @@ using FlagMySpace.Agnostic.Models.PersonModel;
 using FlagMySpace.Agnostic.Models.SpaceModel;
 using FlagMySpace.Agnostic.Repositories.PersonRepository;
 using FlagMySpace.Agnostic.Repositories.SpaceRepository;
-using FlagMySpace.Agnostic.RepositoryServices.PersonRepositoryService;
-using FlagMySpace.Agnostic.RepositoryServices.SpaceRepositoryService;
 using FlagMySpace.Agnostic.Services.ErrorService;
 using FlagMySpace.Agnostic.Services.LoginService;
 using FlagMySpace.Agnostic.Services.RegisterService;
+using FlagMySpace.Agnostic.Services.SpaceService;
 using FlagMySpace.Agnostic.Utilities.EmailValidatorUtility;
 using FlagMySpace.Agnostic.Utilities.PasswordValidatorUtility;
 using FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility;
@@ -81,7 +80,7 @@ namespace FlagMySpace.Portable.Bootstrap
             container.Register<ILoginPageViewModel, LoginPageViewModel>();
             container.Register<IRegisterPageViewModel, RegisterPageViewModel>();
             container.Register<IHomePageViewModel, HomePageViewModel>();
-            container.Register<IStreamPageViewModel<FreshSpaceRepositoryService>, StreamPageViewModel<FreshSpaceRepositoryService>>();
+            container.Register<IStreamPageViewModel<FreshSpaceService>, StreamPageViewModel<FreshSpaceService>>();
             #endregion
 
             #region Repository

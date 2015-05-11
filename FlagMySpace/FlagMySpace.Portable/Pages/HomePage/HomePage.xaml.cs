@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlagMySpace.Agnostic.IoC;
-using FlagMySpace.Agnostic.RepositoryServices.SpaceRepositoryService;
+using FlagMySpace.Agnostic.Services.SpaceService;
 using FlagMySpace.Portable.Pages.StreamPage;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels.StreamPageViewModel;
@@ -32,7 +32,7 @@ namespace FlagMySpace.Portable.Pages.HomePage
         {
             try
             {
-                var freshPage = (Page) _viewFactory.Get<IStreamPageViewModel<FreshSpaceRepositoryService>>();
+                var freshPage = (Page) _viewFactory.Get<IStreamPageViewModel<FreshSpaceService>>();
                 freshPage.Title = "Fresh";
                 Children.Add(freshPage);
             }

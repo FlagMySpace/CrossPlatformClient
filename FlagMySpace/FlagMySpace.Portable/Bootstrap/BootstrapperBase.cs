@@ -1,7 +1,7 @@
 using System;
 using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Agnostic.Repositories.SpaceRepository;
-using FlagMySpace.Agnostic.RepositoryServices.SpaceRepositoryService;
+using FlagMySpace.Agnostic.Services.SpaceService;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.Resources;
 using FlagMySpace.Portable.Pages;
@@ -52,7 +52,7 @@ namespace FlagMySpace.Portable.Bootstrap
             viewFactory.Set<ILoginPageViewModel, ILoginPage>();
             viewFactory.Set<IRegisterPageViewModel, IRegisterPage>();
             viewFactory.Set<IStreamPageViewModel, IStreamPage>();
-            viewFactory.Set<IStreamPageViewModel<FreshSpaceRepositoryService>, IStreamPage>();
+            viewFactory.Set<IStreamPageViewModel<FreshSpaceService>, IStreamPage>();
             viewFactory.Set<IHomePageViewModel, IHomePage>();
         }
     }

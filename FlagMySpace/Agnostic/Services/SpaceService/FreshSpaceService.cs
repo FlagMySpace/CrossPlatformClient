@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FlagMySpace.Agnostic.Models.SpaceModel;
 using FlagMySpace.Agnostic.Repositories.SpaceRepository;
 
-namespace FlagMySpace.Agnostic.RepositoryServices.SpaceRepositoryService
+namespace FlagMySpace.Agnostic.Services.SpaceService
 {
-    public class FreshSpaceRepositoryService : ISpaceRepositoryService
+    public class FreshSpaceService : ISpaceService
     {
         private readonly ISpaceRepository _spaceRepository;
 
-        public FreshSpaceRepositoryService(ISpaceRepository spaceRepository)
+        public FreshSpaceService(ISpaceRepository spaceRepository)
         {
             _spaceRepository = spaceRepository;
         }
