@@ -1,6 +1,6 @@
-using FlagMySpace.Agnostic.Models.Person;
+using FlagMySpace.Agnostic.Models.PersonModel;
 
-namespace FlagMySpace.Agnostic.Models.Space
+namespace FlagMySpace.Agnostic.Models.SpaceModel
 {
     public interface ISpaceModel
     {

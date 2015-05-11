@@ -43,7 +43,7 @@
     <Compile Include="Bootstrap\BootstrapperBase.cs" />
     <Compile Include="Bootstrap\IBoostrapper.cs" />
     <Compile Include="Bootstrap\SimpleInjectorBootstrapper.cs" />
-    <Compile Include="MarkupExtension\ElementSource.cs" />
+    <Compile Include="MarkupExtensions\ElementSource.cs" />
     <Compile Include="IoC\IoCNinject.cs" />
     <Compile Include="IoC\IoCSimpleContainer.cs" />
     <Compile Include="Pages\StreamPage\StreamPage.xaml.cs">
@@ -55,11 +55,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Localization\ILocalize.cs" />
-    <Compile Include="Localization\LoginPageLocalization\ILoginPageLocalization.cs" />
-    <Compile Include="Localization\RegisterPageLocalization\IRegisterPageLocalization.cs" />
-    <Compile Include="Localization\LoginPageLocalization\LoginPageLocalization.cs" />
-    <Compile Include="Localization\RegisterPageLocalization\RegisterPageLocalization.cs" />
+    <Compile Include="Localizations\ILocalize.cs" />
+    <Compile Include="Localizations\LoginPageLocalization\ILoginPageLocalization.cs" />
+    <Compile Include="Localizations\RegisterPageLocalization\IRegisterPageLocalization.cs" />
+    <Compile Include="Localizations\LoginPageLocalization\LoginPageLocalization.cs" />
+    <Compile Include="Localizations\RegisterPageLocalization\RegisterPageLocalization.cs" />
     <Compile Include="Pages\LoginPage\ILoginPage.cs" />
     <Compile Include="Pages\RegisterPage\IRegisterPage.cs" />
     <Compile Include="Pages\IView.cs" />

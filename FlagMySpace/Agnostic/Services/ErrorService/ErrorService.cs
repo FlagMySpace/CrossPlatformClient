@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using FlagMySpace.Agnostic.EventAggregator;
 
-namespace FlagMySpace.Agnostic.Services.Error
+namespace FlagMySpace.Agnostic.Services.ErrorService
 {
     public class ErrorService : IErrorService
     {

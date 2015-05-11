@@ -1,4 +1,4 @@
-﻿namespace FlagMySpace.Agnostic.Models.Person
+﻿namespace FlagMySpace.Agnostic.Models.PersonModel
 {
     public class PersonModel : IPersonModel
     {

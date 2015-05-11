@@ -41,19 +41,19 @@
     <Compile Include="EventAggregator\IEventAggregator.cs" />
     <Compile Include="EventAggregator\IHandle.cs" />
     <Compile Include="IoC\IIoC.cs" />
-    <Compile Include="Services\Login\ILoginService.cs" />
-    <Compile Include="Services\Login\MockLoginService.cs" />
-    <Compile Include="Models\Person\IPersonModel.cs" />
-    <Compile Include="Models\Person\PersonModel.cs" />
+    <Compile Include="Services\LoginService\ILoginService.cs" />
+    <Compile Include="Services\LoginService\MockLoginService.cs" />
+    <Compile Include="Models\PersonModel\IPersonModel.cs" />
+    <Compile Include="Models\PersonModel\PersonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Error\ErrorService.cs" />
-    <Compile Include="Services\Error\IErrorService.cs" />
-    <Compile Include="Models\Space\ISpaceModel.cs" />
-    <Compile Include="Models\Space\SpaceModel.cs" />
+    <Compile Include="Services\ErrorService\ErrorService.cs" />
+    <Compile Include="Services\ErrorService\IErrorService.cs" />
+    <Compile Include="Models\SpaceModel\ISpaceModel.cs" />
+    <Compile Include="Models\SpaceModel\SpaceModel.cs" />
     <Compile Include="Utilities\EmailValidatorUtility\IEmailValidatorUtility.cs" />
     <Compile Include="Utilities\PasswordValidatorUtility\IPasswordValidatorUtility.cs" />
-    <Compile Include="Services\Register\IRegisterService.cs" />
-    <Compile Include="Services\Register\MockRegisterService.cs" />
+    <Compile Include="Services\RegisterService\IRegisterService.cs" />
+    <Compile Include="Services\RegisterService\MockRegisterService.cs" />
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,7 +76,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\PersonRepository\" />
+    <Folder Include="Repositories\SpaceRepository\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

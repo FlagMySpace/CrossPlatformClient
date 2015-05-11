@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace FlagMySpace.Agnostic.Services.Login
+namespace FlagMySpace.Agnostic.Services.LoginService
 {
     public interface ILoginService
     {

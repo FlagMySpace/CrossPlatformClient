@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace FlagMySpace.Agnostic.Services.Register
+namespace FlagMySpace.Agnostic.Services.RegisterService
 {
     public interface IRegisterService
     {

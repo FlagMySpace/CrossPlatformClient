@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:streamPageViewModel="clr-namespace:FlagMySpace.Portable.ViewModels.StreamPageViewModel;assembly=FlagMySpace.Portable"
              xmlns:markupExtension="clr-namespace:FlagMySpace.Portable.MarkupExtension;assembly=FlagMySpace.Portable"
-             xmlns:space="clr-namespace:FlagMySpace.Agnostic.Models.Space;assembly=FlagMySpace.Agnostic"
+             xmlns:spaceModel="clr-namespace:FlagMySpace.Agnostic.Models.SpaceModel;assembly=FlagMySpace.Agnostic"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance streamPageViewModel:IStreamPageViewModel}"
              Style="{StaticResource StreamPageStyle}">
@@ -15,7 +15,7 @@
               HasUnevenRows="True">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ViewCell d:DataContext="{d:DesignInstance space:ISpaceModel}">
+          <ViewCell d:DataContext="{d:DesignInstance spaceModel:ISpaceModel}">
             <ViewCell.View>
               <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="0" Padding="10">
                 <Grid Padding="10">

@@ -4,7 +4,7 @@ using FlagMySpace.Agnostic.Utilities.EmailValidatorUtility;
 using FlagMySpace.Agnostic.Utilities.PasswordValidatorUtility;
 using FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility;
 
-namespace FlagMySpace.Agnostic.Services.Register
+namespace FlagMySpace.Agnostic.Services.RegisterService
 {
     public class MockRegisterService : IRegisterService
     {

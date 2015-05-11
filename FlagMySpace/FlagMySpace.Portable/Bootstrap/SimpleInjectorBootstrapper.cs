@@ -1,11 +1,11 @@
 ﻿using Acr.UserDialogs;
 using FlagMySpace.Agnostic.EventAggregator;
 using FlagMySpace.Agnostic.IoC;
-using FlagMySpace.Agnostic.Models.Person;
-using FlagMySpace.Agnostic.Models.Space;
-using FlagMySpace.Agnostic.Services.Error;
-using FlagMySpace.Agnostic.Services.Login;
-using FlagMySpace.Agnostic.Services.Register;
+using FlagMySpace.Agnostic.Models.PersonModel;
+using FlagMySpace.Agnostic.Models.SpaceModel;
+using FlagMySpace.Agnostic.Services.ErrorService;
+using FlagMySpace.Agnostic.Services.LoginService;
+using FlagMySpace.Agnostic.Services.RegisterService;
 using FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility;
 using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
