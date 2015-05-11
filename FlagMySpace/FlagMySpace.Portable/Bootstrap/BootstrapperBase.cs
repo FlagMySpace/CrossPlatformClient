@@ -4,10 +4,12 @@ using FlagMySpace.Portable.Resources;
 using FlagMySpace.Portable.Pages;
 using FlagMySpace.Portable.Pages.LoginPage;
 using FlagMySpace.Portable.Pages.RegisterPage;
+using FlagMySpace.Portable.Pages.StreamPage;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
 using FlagMySpace.Portable.ViewModels.LoginPageViewModel;
 using FlagMySpace.Portable.ViewModels.RegisterPageViewModel;
+using FlagMySpace.Portable.ViewModels.StreamPageViewModel;
 using Xamarin.Forms;
 
 namespace FlagMySpace.Portable.Bootstrap
@@ -42,8 +44,9 @@ namespace FlagMySpace.Portable.Bootstrap
 
         private void RegisterViews(IViewFactory viewFactory)
         {
-            viewFactory.Set<ILoginPageViewModel, LoginPage>();
-            viewFactory.Set<IRegisterPageViewModel, RegisterPage>();
+            viewFactory.Set<ILoginPageViewModel, ILoginPage>();
+            viewFactory.Set<IRegisterPageViewModel, IRegisterPage>();
+            viewFactory.Set<IStreamPageViewModel, IStreamPage>();
         }
     }
 }

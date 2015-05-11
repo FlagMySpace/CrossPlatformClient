@@ -42,10 +42,13 @@
     </Compile>
     <Compile Include="Bootstrap\BootstrapperBase.cs" />
     <Compile Include="Bootstrap\IBoostrapper.cs" />
-    <Compile Include="Bootstrap\NinjectBoostrapper.cs" />
     <Compile Include="Bootstrap\SimpleInjectorBootstrapper.cs" />
     <Compile Include="IoC\IoCNinject.cs" />
     <Compile Include="IoC\IoCSimpleContainer.cs" />
+    <Compile Include="Pages\StreamPage\StreamPage.xaml.cs">
+      <DependentUpon>StreamPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StreamPage\IStreamPage.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -56,8 +59,6 @@
     <Compile Include="Localization\RegisterPageLocalization\IRegisterPageLocalization.cs" />
     <Compile Include="Localization\LoginPageLocalization\LoginPageLocalization.cs" />
     <Compile Include="Localization\RegisterPageLocalization\RegisterPageLocalization.cs" />
-    <Compile Include="NinjectModules\FlagMySpaceModule.cs" />
-    <Compile Include="NinjectModules\MockProviderModule.cs" />
     <Compile Include="Pages\LoginPage\ILoginPage.cs" />
     <Compile Include="Pages\RegisterPage\IRegisterPage.cs" />
     <Compile Include="Pages\IView.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="ViewModels\RegisterPageViewModel\IRegisterPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\RegisterPageViewModel\RegisterPageViewModel.cs" />
+    <Compile Include="ViewModels\StreamPageViewModel\IStreamPageViewModel.cs" />
+    <Compile Include="ViewModels\StreamPageViewModel\StreamPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Acr.UserDialogs">
@@ -145,7 +148,12 @@
       </SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\StreamPage\StreamPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Agnostic\FlagMySpace.Agnostic.csproj">
       <Project>{8e460629-576c-4fc1-9e7d-eaf1c40f6503}</Project>

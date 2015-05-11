@@ -12,10 +12,12 @@ using FlagMySpace.Portable.Localization.RegisterPageLocalization;
 using FlagMySpace.Portable.Pages;
 using FlagMySpace.Portable.Pages.LoginPage;
 using FlagMySpace.Portable.Pages.RegisterPage;
+using FlagMySpace.Portable.Pages.StreamPage;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
 using FlagMySpace.Portable.ViewModels.LoginPageViewModel;
 using FlagMySpace.Portable.ViewModels.RegisterPageViewModel;
+using FlagMySpace.Portable.ViewModels.StreamPageViewModel;
 using SimpleInjector;
 using Xamarin.Forms;
 
@@ -26,37 +28,58 @@ namespace FlagMySpace.Portable.Bootstrap
         protected override IIoC ConfigureContainer()
         {
             var container = new Container();
-            // Event Aggregator
+            #region Event Aggregator
             container.RegisterSingle<IEventAggregator, EventAggregator>();
-            // View Factory
+            #endregion
+
+            #region View Factory
             container.Register<IIoC, IoCSimpleContainer>();
             container.RegisterSingle<IViewFactory, ViewFactory.ViewFactory>();
-            // Localization
+            #endregion
+
+            #region Localization
             container.Register(() => DependencyService.Get<ILocalize>());
             container.Register<ILoginPageLocalization, LoginPageLocalization>();
             container.Register<IRegisterPageLocalization, RegisterPageLocalization>();
-            // User dialog
+            #endregion
+
+            #region User Dialog
             container.RegisterSingle(() => UserDialogs.Instance);
-            // View
+            #endregion
+
+            #region View
             container.Register<ILoginPage, LoginPage>();
             container.Register<IRegisterPage, RegisterPage>();
-            // View Model
+            container.Register<IStreamPage, StreamPage>();
+            #endregion
+
+            #region View Model
             container.Register<ILoginPageViewModel, LoginPageViewModel>();
             container.Register<IRegisterPageViewModel, RegisterPageViewModel>();
-            // Login
+            container.Register<IStreamPageViewModel, StreamPageViewModel>();
+            #endregion
+
+            #region Login
             container.Register<ILoginService, MockLoginService>();
-            // Register
+            #endregion
+
+            #region Register
             container.Register<IRegisterService, MockRegisterService>();
-            // Error
+            #endregion
+
+            #region Error
             container.Register<IErrorService, ErrorService>();
-            // Utility
+            #endregion
+
+            #region Utility
             container.Register<IUsernameValidatorUtility, MockUsernameValidatorUtility>();
+            #endregion
 
 #if DEBUG
             container.Verify();
 #endif
 
-            return container.GetInstance<IoCSimpleContainer>();
+            return container.GetInstance<IIoC>();
         }
     }
 }
