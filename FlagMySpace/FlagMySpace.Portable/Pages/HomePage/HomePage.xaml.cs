@@ -30,15 +30,11 @@ namespace FlagMySpace.Portable.Pages.HomePage
 
         Task HomePage_OnInitializeAsync()
         {
-            try
+            if (_viewFactory.CountMapping > 0)
             {
                 var freshPage = (Page) _viewFactory.Get<IStreamPageViewModel<FreshSpaceService>>();
                 freshPage.Title = "Fresh";
                 Children.Add(freshPage);
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
             }
             return Task.FromResult<object>(null);
         }

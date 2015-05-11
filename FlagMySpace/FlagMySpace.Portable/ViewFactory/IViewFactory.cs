@@ -18,5 +18,7 @@ namespace FlagMySpace.Portable.ViewFactory
 
         IView Get<TViewModel>(TViewModel viewModel)
             where TViewModel : class, IViewModel;
+
+        int CountMapping { get; }
     }
 }

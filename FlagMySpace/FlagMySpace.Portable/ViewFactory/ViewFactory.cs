@@ -17,6 +17,11 @@ namespace FlagMySpace.Portable.ViewFactory
             _provider = provider;
         }
 
+        public int CountMapping
+        {
+            get { return _map.Count; }
+        }
+
         public void Set<TViewModel, TView>()
             where TViewModel : class, IViewModel
             where TView : IView
