@@ -47,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Error\ErrorService.cs" />
     <Compile Include="Error\IErrorService.cs" />
+    <Compile Include="Space\SpaceModel.cs" />
     <Compile Include="Utilities\EmailValidatorUtility\IEmailValidatorUtility.cs" />
     <Compile Include="Utilities\PasswordValidatorUtility\IPasswordValidatorUtility.cs" />
     <Compile Include="Register\IRegisterService.cs" />

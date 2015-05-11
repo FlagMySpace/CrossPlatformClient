@@ -4,6 +4,46 @@
              x:Class="FlagMySpace.Portable.Pages.StreamPage.StreamPage"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             mc:Ignorable="d">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             xmlns:streamPageViewModel="clr-namespace:FlagMySpace.Portable.ViewModels.StreamPageViewModel;assembly=FlagMySpace.Portable"
+             xmlns:markupExtension="clr-namespace:FlagMySpace.Portable.MarkupExtension;assembly=FlagMySpace.Portable"
+             xmlns:space="clr-namespace:FlagMySpace.Agnostic.Space;assembly=FlagMySpace.Agnostic"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance streamPageViewModel:IStreamPageViewModel}"
+             Style="{StaticResource StreamPageStyle}">
+  <StackLayout Padding="10, 0">
+    <ListView x:Name="ListView" ItemsSource="{Binding StreamCollection}"
+              HasUnevenRows="True">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell d:DataContext="{d:DesignInstance space:SpaceModel}">
+            <ViewCell.View>
+              <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="0" Padding="10">
+                <Grid Padding="10">
+                  <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="8*" />
+                  </Grid.ColumnDefinitions>
+                  <Image Grid.Column="0" Grid.RowSpan="2" Source="{Binding PersonImageUrl}"/>
+                  <Label Grid.Column="1" Grid.Row="0" Text="{Binding Title}"
+                         TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                  <Label Grid.Column="1" Grid.Row="1"
+                         Text="{Binding DateTaken}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                </Grid>
+                <Image Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+                <StackLayout Orientation="Horizontal" BackgroundColor="#f2f5f8" Padding="10">
+                  <Button Text="{Binding Path=BindingContext.ShareText, Source={markupExtension:ElementSource ListView}}"
+                          Command="{Binding Path=BindingContext.ShareCommand, Source={markupExtension:ElementSource ListView}}"
+                          CommandParameter="{Binding ImageUrl}" HorizontalOptions="Start"/>
+                </StackLayout>
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
 </ContentPage>

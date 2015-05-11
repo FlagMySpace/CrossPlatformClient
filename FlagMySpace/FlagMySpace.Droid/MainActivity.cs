@@ -1,4 +1,5 @@
-﻿using Acr.UserDialogs;
+﻿using System.ComponentModel;
+using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
@@ -8,7 +9,7 @@ using XLabs.Forms;
 
 namespace FlagMySpace.Droid
 {
-    [Activity(Label = "FlagMySpace", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Localizable(false), Activity(Label = "FlagMySpace", Icon = "@drawable/icon", MainLauncher = true, Theme = "@android:style/Theme.Holo.Light", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : XFormsApplicationDroid
     {
         protected override void OnCreate(Bundle bundle)
@@ -19,7 +20,7 @@ namespace FlagMySpace.Droid
 
             if (UserDialogs.Instance == null)
             {
-                UserDialogs.Init(() => (Activity) Forms.Context);
+                UserDialogs.Init(() => (Activity)Forms.Context);
             }
 
             LoadApplication(new App());

@@ -25,6 +25,7 @@ namespace FlagMySpace.Portable.Bootstrap
 {
     public class SimpleInjectorBootstrapper : BootstrapperBase
     {
+        /// <exception cref="ActivationException">Thrown when there are errors resolving the service instance.</exception>
         protected override IIoC ConfigureContainer()
         {
             var container = new Container();
@@ -32,8 +33,13 @@ namespace FlagMySpace.Portable.Bootstrap
             container.RegisterSingle<IEventAggregator, EventAggregator>();
             #endregion
 
+            #region IoC
+
+            container.RegisterSingle<IIoC, IoCSimpleContainer>();
+
+            #endregion
+
             #region View Factory
-            container.Register<IIoC, IoCSimpleContainer>();
             container.RegisterSingle<IViewFactory, ViewFactory.ViewFactory>();
             #endregion
 

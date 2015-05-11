@@ -1,12 +1,11 @@
 ﻿<Application
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="FlagMySpace.Portable.App"
-    xmlns:xamarin="clr-namespace:Xamarin;assembly=Xamarin.Forms.Core">
+    x:Class="FlagMySpace.Portable.App">
   <Application.Resources>
     <ResourceDictionary>
-      <Style x:Key="labelStyle" TargetType="Label">
-        <Setter Property="TextColor" Value="Green" />
+      <Style x:Key="StreamPageStyle" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="#D3D6DB" />
       </Style>
     </ResourceDictionary>
   </Application.Resources>
