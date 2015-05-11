@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FlagMySpace.Portable.MarkupExtension
+namespace FlagMySpace.Portable.MarkupExtensions
 {
     [ContentProperty(@"ElementName")]
     public class ElementSource : IMarkupExtension

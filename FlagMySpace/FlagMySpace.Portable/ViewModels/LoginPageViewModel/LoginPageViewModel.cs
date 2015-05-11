@@ -5,6 +5,7 @@ using FlagMySpace.Agnostic.EventAggregator;
 using FlagMySpace.Agnostic.Services.LoginService;
 using FlagMySpace.Portable.Localization.LoginPageLocalization;
 using FlagMySpace.Portable.ViewFactory;
+using FlagMySpace.Portable.ViewModels.HomePageViewModel;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
@@ -54,7 +55,7 @@ namespace FlagMySpace.Portable.ViewModels.LoginPageViewModel
                 }
                 else
                 {
-                    //TODO: redirect user after successful login.
+                    await Navigation.PushAsync((Page) _viewFactory.Get<IHomePageViewModel>());
                 }
             }
             else

@@ -41,6 +41,13 @@
     <Compile Include="EventAggregator\IEventAggregator.cs" />
     <Compile Include="EventAggregator\IHandle.cs" />
     <Compile Include="IoC\IIoC.cs" />
+    <Compile Include="Repositories\PersonRepository\IPersonRepository.cs" />
+    <Compile Include="Repositories\PersonRepository\LocalPersonRepository.cs" />
+    <Compile Include="Repositories\SpaceRepository\ISpaceRepository.cs" />
+    <Compile Include="Repositories\SpaceRepository\LocalSpaceRepository.cs" />
+    <Compile Include="RepositoryServices\PersonRepositoryService\IPersonRepositoryService.cs" />
+    <Compile Include="RepositoryServices\SpaceRepositoryService\FreshSpaceRepositoryService.cs" />
+    <Compile Include="RepositoryServices\SpaceRepositoryService\ISpaceRepositoryService.cs" />
     <Compile Include="Services\LoginService\ILoginService.cs" />
     <Compile Include="Services\LoginService\MockLoginService.cs" />
     <Compile Include="Models\PersonModel\IPersonModel.cs" />
@@ -75,10 +82,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\PersonRepository\" />
-    <Folder Include="Repositories\SpaceRepository\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

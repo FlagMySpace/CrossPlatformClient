@@ -1,22 +1,31 @@
-﻿using Acr.UserDialogs;
+﻿using System;
+using Acr.UserDialogs;
 using FlagMySpace.Agnostic.EventAggregator;
 using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Agnostic.Models.PersonModel;
 using FlagMySpace.Agnostic.Models.SpaceModel;
+using FlagMySpace.Agnostic.Repositories.PersonRepository;
+using FlagMySpace.Agnostic.Repositories.SpaceRepository;
+using FlagMySpace.Agnostic.RepositoryServices.PersonRepositoryService;
+using FlagMySpace.Agnostic.RepositoryServices.SpaceRepositoryService;
 using FlagMySpace.Agnostic.Services.ErrorService;
 using FlagMySpace.Agnostic.Services.LoginService;
 using FlagMySpace.Agnostic.Services.RegisterService;
+using FlagMySpace.Agnostic.Utilities.EmailValidatorUtility;
+using FlagMySpace.Agnostic.Utilities.PasswordValidatorUtility;
 using FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility;
 using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.Localization.LoginPageLocalization;
 using FlagMySpace.Portable.Localization.RegisterPageLocalization;
 using FlagMySpace.Portable.Pages;
+using FlagMySpace.Portable.Pages.HomePage;
 using FlagMySpace.Portable.Pages.LoginPage;
 using FlagMySpace.Portable.Pages.RegisterPage;
 using FlagMySpace.Portable.Pages.StreamPage;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels;
+using FlagMySpace.Portable.ViewModels.HomePageViewModel;
 using FlagMySpace.Portable.ViewModels.LoginPageViewModel;
 using FlagMySpace.Portable.ViewModels.RegisterPageViewModel;
 using FlagMySpace.Portable.ViewModels.StreamPageViewModel;
@@ -28,6 +37,7 @@ namespace FlagMySpace.Portable.Bootstrap
     public class SimpleInjectorBootstrapper : BootstrapperBase
     {
         /// <exception cref="ActivationException">Thrown when there are errors resolving the service instance.</exception>
+        /// <exception cref="Exception">A delegate callback throws an exception.</exception>
         protected override IIoC ConfigureContainer()
         {
             var container = new Container();
@@ -64,12 +74,19 @@ namespace FlagMySpace.Portable.Bootstrap
             container.Register<ILoginPage, LoginPage>();
             container.Register<IRegisterPage, RegisterPage>();
             container.Register<IStreamPage, StreamPage>();
+            container.Register<IHomePage, HomePage>();
             #endregion
 
             #region View Model
             container.Register<ILoginPageViewModel, LoginPageViewModel>();
             container.Register<IRegisterPageViewModel, RegisterPageViewModel>();
-            container.Register<IStreamPageViewModel, StreamPageViewModel>();
+            container.Register<IHomePageViewModel, HomePageViewModel>();
+            container.Register<IStreamPageViewModel<FreshSpaceRepositoryService>, StreamPageViewModel<FreshSpaceRepositoryService>>();
+            #endregion
+
+            #region Repository
+            container.RegisterSingle<IPersonRepository, LocalPersonRepository>();
+            container.RegisterSingle<ISpaceRepository, LocalSpaceRepository>();
             #endregion
 
             #region Login
@@ -86,6 +103,8 @@ namespace FlagMySpace.Portable.Bootstrap
 
             #region Utility
             container.Register<IUsernameValidatorUtility, MockUsernameValidatorUtility>();
+            container.Register<IPasswordValidatorUtility, PasswordValidatorUtility>();
+            container.Register<IEmailValidatorUtility, EmailValidatorUtility>();
             #endregion
 
 #if DEBUG

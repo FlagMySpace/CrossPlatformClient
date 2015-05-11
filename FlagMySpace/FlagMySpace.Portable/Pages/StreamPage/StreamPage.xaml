@@ -5,8 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:streamPageViewModel="clr-namespace:FlagMySpace.Portable.ViewModels.StreamPageViewModel;assembly=FlagMySpace.Portable"
-             xmlns:markupExtension="clr-namespace:FlagMySpace.Portable.MarkupExtension;assembly=FlagMySpace.Portable"
              xmlns:spaceModel="clr-namespace:FlagMySpace.Agnostic.Models.SpaceModel;assembly=FlagMySpace.Agnostic"
+             xmlns:markupExtensions="clr-namespace:FlagMySpace.Portable.MarkupExtensions;assembly=FlagMySpace.Portable"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance streamPageViewModel:IStreamPageViewModel}"
              Style="{StaticResource StreamPageStyle}">
@@ -35,8 +35,8 @@
                 </Grid>
                 <Image Aspect="AspectFill" Source="{Binding Image}"/>
                 <StackLayout Orientation="Horizontal" BackgroundColor="#f2f5f8" Padding="10">
-                  <Button Text="{Binding Path=BindingContext.ShareText, Source={markupExtension:ElementSource ListView}}"
-                          Command="{Binding Path=BindingContext.ShareCommand, Source={markupExtension:ElementSource ListView}}"
+                  <Button Text="{Binding Path=BindingContext.ShareText, Source={markupExtensions:ElementSource ListView}}"
+                          Command="{Binding Path=BindingContext.ShareCommand, Source={markupExtensions:ElementSource ListView}}"
                           CommandParameter="{Binding Image}" HorizontalOptions="Start"/>
                 </StackLayout>
               </StackLayout>

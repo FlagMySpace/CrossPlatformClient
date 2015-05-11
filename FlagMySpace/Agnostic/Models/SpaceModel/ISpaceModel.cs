@@ -1,3 +1,4 @@
+using System;
 using FlagMySpace.Agnostic.Models.PersonModel;
 
 namespace FlagMySpace.Agnostic.Models.SpaceModel
@@ -6,7 +7,7 @@ namespace FlagMySpace.Agnostic.Models.SpaceModel
     {
         IPersonModel Person { get; set; }
         string Title { get; set; }
-        string DateTaken { get; set; }
+        DateTime DateTaken { get; set; }
         string Image { get; set; }
     }
 }

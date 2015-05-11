@@ -5,6 +5,8 @@ using Acr.UserDialogs;
 using FlagMySpace.Agnostic.Services.RegisterService;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.Localization.RegisterPageLocalization;
+using FlagMySpace.Portable.ViewFactory;
+using FlagMySpace.Portable.ViewModels.HomePageViewModel;
 using Xamarin.Forms;
 using XLabs.Forms.Mvvm;
 
@@ -15,12 +17,18 @@ namespace FlagMySpace.Portable.ViewModels.RegisterPageViewModel
         private readonly IRegisterPageLocalization _localization;
         private readonly IRegisterService _registerService;
         private readonly IUserDialogs _userDialogs;
+        private readonly IViewFactory _viewFactory;
 
-        public RegisterPageViewModel(IRegisterPageLocalization localization, IRegisterService registerService, IUserDialogs userDialogs)
+        public RegisterPageViewModel(
+            IRegisterPageLocalization localization, 
+            IRegisterService registerService, 
+            IUserDialogs userDialogs,
+            IViewFactory viewFactory)
         {
             _localization = localization;
             _registerService = registerService;
             _userDialogs = userDialogs;
+            _viewFactory = viewFactory;
         }
 
         #region PropertyBinding
@@ -82,7 +90,7 @@ namespace FlagMySpace.Portable.ViewModels.RegisterPageViewModel
                     await
                         _userDialogs.AlertAsync(_localization.RegisterSuccessMessage, _localization.RegisterSuccessTitle,
                             _localization.Ok);
-                    //TODO: link to a page when registration success
+                    await Navigation.PushAsync((Page) _viewFactory.Get<IHomePageViewModel>());
                 }
             }
             catch (Exception ex)
