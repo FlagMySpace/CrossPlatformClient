@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
-using FlagMySpace.Agnostic.Register;
+using FlagMySpace.Agnostic.Services.Register;
 using FlagMySpace.Portable.Localization;
 using FlagMySpace.Portable.Localization.RegisterPageLocalization;
 using Xamarin.Forms;

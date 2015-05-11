@@ -1,5 +1,5 @@
 using System;
-using FlagMySpace.Agnostic.Space;
+using FlagMySpace.Agnostic.Models.Space;
 using XLabs.Forms.Mvvm;
 
 namespace FlagMySpace.Portable.ViewModels.StreamPageViewModel

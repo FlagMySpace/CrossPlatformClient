@@ -1,11 +1,10 @@
-using System;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using FlagMySpace.Agnostic.Utilities.EmailValidatorUtility;
 using FlagMySpace.Agnostic.Utilities.PasswordValidatorUtility;
 using FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility;
 
-namespace FlagMySpace.Agnostic.Register
+namespace FlagMySpace.Agnostic.Services.Register
 {
     public class MockRegisterService : IRegisterService
     {

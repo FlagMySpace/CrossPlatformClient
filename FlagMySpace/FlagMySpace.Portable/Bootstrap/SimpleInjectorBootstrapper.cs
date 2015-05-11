@@ -1,9 +1,11 @@
 ﻿using Acr.UserDialogs;
-using FlagMySpace.Agnostic.Error;
 using FlagMySpace.Agnostic.EventAggregator;
 using FlagMySpace.Agnostic.IoC;
-using FlagMySpace.Agnostic.Login;
-using FlagMySpace.Agnostic.Register;
+using FlagMySpace.Agnostic.Models.Person;
+using FlagMySpace.Agnostic.Models.Space;
+using FlagMySpace.Agnostic.Services.Error;
+using FlagMySpace.Agnostic.Services.Login;
+using FlagMySpace.Agnostic.Services.Register;
 using FlagMySpace.Agnostic.Utilities.UsernameValidatorUtility;
 using FlagMySpace.Portable.IoC;
 using FlagMySpace.Portable.Localization;
@@ -51,6 +53,11 @@ namespace FlagMySpace.Portable.Bootstrap
 
             #region User Dialog
             container.RegisterSingle(() => UserDialogs.Instance);
+            #endregion
+
+            #region Model
+            container.Register<IPersonModel, PersonModel>();
+            container.Register<ISpaceModel, SpaceModel>();
             #endregion
 
             #region View

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace FlagMySpace.Agnostic.Login
+namespace FlagMySpace.Agnostic.Services.Login
 {
     public class MockLoginService : ILoginService
     {

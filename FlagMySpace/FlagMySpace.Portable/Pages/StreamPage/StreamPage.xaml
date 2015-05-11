@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:streamPageViewModel="clr-namespace:FlagMySpace.Portable.ViewModels.StreamPageViewModel;assembly=FlagMySpace.Portable"
              xmlns:markupExtension="clr-namespace:FlagMySpace.Portable.MarkupExtension;assembly=FlagMySpace.Portable"
-             xmlns:space="clr-namespace:FlagMySpace.Agnostic.Space;assembly=FlagMySpace.Agnostic"
+             xmlns:space="clr-namespace:FlagMySpace.Agnostic.Models.Space;assembly=FlagMySpace.Agnostic"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance streamPageViewModel:IStreamPageViewModel}"
              Style="{StaticResource StreamPageStyle}">
@@ -15,7 +15,7 @@
               HasUnevenRows="True">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ViewCell d:DataContext="{d:DesignInstance space:SpaceModel}">
+          <ViewCell d:DataContext="{d:DesignInstance space:ISpaceModel}">
             <ViewCell.View>
               <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="0" Padding="10">
                 <Grid Padding="10">
@@ -27,17 +27,17 @@
                     <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="8*" />
                   </Grid.ColumnDefinitions>
-                  <Image Grid.Column="0" Grid.RowSpan="2" Source="{Binding PersonImageUrl}"/>
+                  <Image Grid.Column="0" Grid.RowSpan="2" Source="{Binding Person.Image}"/>
                   <Label Grid.Column="1" Grid.Row="0" Text="{Binding Title}"
                          TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
                   <Label Grid.Column="1" Grid.Row="1"
                          Text="{Binding DateTaken}" HorizontalOptions="Start" VerticalOptions="Center"/>
                 </Grid>
-                <Image Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+                <Image Aspect="AspectFill" Source="{Binding Image}"/>
                 <StackLayout Orientation="Horizontal" BackgroundColor="#f2f5f8" Padding="10">
                   <Button Text="{Binding Path=BindingContext.ShareText, Source={markupExtension:ElementSource ListView}}"
                           Command="{Binding Path=BindingContext.ShareCommand, Source={markupExtension:ElementSource ListView}}"
-                          CommandParameter="{Binding ImageUrl}" HorizontalOptions="Start"/>
+                          CommandParameter="{Binding Image}" HorizontalOptions="Start"/>
                 </StackLayout>
               </StackLayout>
             </ViewCell.View>

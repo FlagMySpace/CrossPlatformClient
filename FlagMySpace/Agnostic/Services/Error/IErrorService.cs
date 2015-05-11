@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace FlagMySpace.Agnostic.Error
+namespace FlagMySpace.Agnostic.Services.Error
 {
     public interface IErrorService
     {
