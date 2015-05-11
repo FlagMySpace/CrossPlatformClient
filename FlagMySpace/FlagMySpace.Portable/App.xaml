@@ -1,12 +1,15 @@
 ﻿<Application
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:XLabs.Forms.Converter;assembly=XLabs.Forms"
+    xmlns:converters="clr-namespace:FlagMySpace.Portable.Converters;assembly=FlagMySpace.Portable"
     x:Class="FlagMySpace.Portable.App">
   <Application.Resources>
     <ResourceDictionary>
       <Style x:Key="StreamPageStyle" TargetType="ContentPage">
         <Setter Property="BackgroundColor" Value="#D3D6DB" />
       </Style>
+      <converters:ImageSourceCachedConverter x:Key="ImageSourceCachedConverter" />
     </ResourceDictionary>
   </Application.Resources>
 </Application>

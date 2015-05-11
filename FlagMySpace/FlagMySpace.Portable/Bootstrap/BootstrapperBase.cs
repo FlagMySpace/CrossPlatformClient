@@ -41,10 +41,7 @@ namespace FlagMySpace.Portable.Bootstrap
             }
             var viewFactory = container.Get<IViewFactory>();
 
-            var tabbedPage = container.Get<TabbedPage>();
-            tabbedPage.Children.Add(viewFactory.Get<ILoginPageViewModel>() as Page);
-            tabbedPage.Children.Add(viewFactory.Get<IRegisterPageViewModel>() as Page);
-            _application.MainPage = new NavigationPage(tabbedPage);
+            _application.MainPage = new NavigationPage(viewFactory.Get<IHomePageViewModel>() as Page);
         }
 
         private void RegisterViews(IViewFactory viewFactory)

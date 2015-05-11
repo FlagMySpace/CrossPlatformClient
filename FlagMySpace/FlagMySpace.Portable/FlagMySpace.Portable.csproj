@@ -43,6 +43,7 @@
     <Compile Include="Bootstrap\BootstrapperBase.cs" />
     <Compile Include="Bootstrap\IBoostrapper.cs" />
     <Compile Include="Bootstrap\SimpleInjectorBootstrapper.cs" />
+    <Compile Include="Converters\ImageSourceCachedConverter.cs" />
     <Compile Include="MarkupExtensions\ElementSource.cs" />
     <Compile Include="IoC\IoCNinject.cs" />
     <Compile Include="IoC\IoCSimpleContainer.cs" />

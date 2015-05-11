@@ -17,29 +17,28 @@
         <DataTemplate>
           <ViewCell d:DataContext="{d:DesignInstance spaceModel:ISpaceModel}">
             <ViewCell.View>
-              <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="0" Padding="10">
-                <Grid Padding="10">
-                  <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                  </Grid.RowDefinitions>
-                  <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" />
-                    <ColumnDefinition Width="8*" />
-                  </Grid.ColumnDefinitions>
-                  <Image Grid.Column="0" Grid.RowSpan="2" Source="{Binding Person.Image}"/>
-                  <Label Grid.Column="1" Grid.Row="0" Text="{Binding Title}"
-                         TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
-                  <Label Grid.Column="1" Grid.Row="1"
-                         Text="{Binding DateTaken}" HorizontalOptions="Start" VerticalOptions="Center"/>
-                </Grid>
-                <Image Aspect="AspectFill" Source="{Binding Image}"/>
-                <StackLayout Orientation="Horizontal" BackgroundColor="#f2f5f8" Padding="10">
+              <Grid Padding="10">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="2*" />
+                  <ColumnDefinition Width="8*" />
+                </Grid.ColumnDefinitions>
+                <Image HeightRequest="40" WidthRequest="40" Grid.Column="0" Grid.RowSpan="2" Source="{Binding Person.Image}"/>
+                <Label Grid.Column="1" Grid.Row="0" Text="{Binding Title}"
+                       TextColor="White" FontAttributes="Bold"/>
+                <Label Grid.Column="1" Grid.Row="1" Text="{Binding DateTaken}"/>
+                <Image Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" Aspect="AspectFit" Source="{Binding Image, Converter={StaticResource ImageSourceCachedConverter}}"/>
+                <StackLayout Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" Orientation="Horizontal" BackgroundColor="#f2f5f8" Padding="10">
                   <Button Text="{Binding Path=BindingContext.ShareText, Source={markupExtensions:ElementSource ListView}}"
                           Command="{Binding Path=BindingContext.ShareCommand, Source={markupExtensions:ElementSource ListView}}"
-                          CommandParameter="{Binding Image}" HorizontalOptions="Start"/>
+                          CommandParameter="{Binding Image}"/>
                 </StackLayout>
-              </StackLayout>
+              </Grid>
             </ViewCell.View>
           </ViewCell>
         </DataTemplate>

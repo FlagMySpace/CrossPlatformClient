@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using FlagMySpace.Agnostic.IoC;
 using FlagMySpace.Agnostic.Services.SpaceService;
-using FlagMySpace.Portable.Pages.StreamPage;
 using FlagMySpace.Portable.ViewFactory;
 using FlagMySpace.Portable.ViewModels.StreamPageViewModel;
 using Xamarin.Forms;
